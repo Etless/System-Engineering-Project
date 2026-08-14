@@ -111,6 +111,8 @@
             name="Rover Operator" abstractType="#8075ba3b-291a-4811-983e-1922ba1f5dd0"/>
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="b184ad85-00f6-441c-a9a5-f639064de567"
             name="Lunar Lander Service" abstractType="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4f24d17b-cf55-45e4-bf38-62be9b9778ee"
+            name="OE 5 - erik test bullshit, remove this" abstractType="#161ba451-7260-4a00-8e54-6ce0ef123524"/>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="81e934b1-5374-40af-9151-4dacd2e59963"
             name="Rover">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
@@ -135,6 +137,8 @@
               id="4320d5db-709f-4f92-83aa-056313d1091d" targetElement="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"
               sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
         </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="161ba451-7260-4a00-8e54-6ce0ef123524"
+            name="OE 5 - erik test bullshit, remove this"/>
       </ownedEntityPkg>
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
