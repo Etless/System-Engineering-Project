@@ -54,8 +54,6 @@
               id="fcbf5db7-78c2-4ecc-a759-77eaf0945072" name="Supervise Rover Operations"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="36a8d224-2551-4b20-a722-847da2e4bb40" name="Perform Lunar Landing"/>
-          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-              id="7d31184c-1ccf-41f9-8859-88eadec970af" name="OperationalActivity 6"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="c09feaba-7f15-4a57-9622-5d48f380bee7" name="Initialization Status"
               target="#85630f2d-22b5-49f8-997f-ef293fc8289e" source="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"/>
