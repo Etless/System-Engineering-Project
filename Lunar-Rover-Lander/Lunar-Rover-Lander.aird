@@ -31,7 +31,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Capabilities%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg" href="Lunar-Rover-Lander.capella#9ea7efcc-886d-4615-b787-e324aaf9f6e2"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Tj4XcJdhEfGu8cD2we-GtA" name="[OAIB] Lunar Landing Mission - Root Operational Activity" repPath="#_TjwboJdhEfGu8cD2we-GtA" changeId="1786691383249">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Tj4XcJdhEfGu8cD2we-GtA" name="[OAIB] Lunar Landing Mission - Root Operational Activity" repPath="#_TjwboJdhEfGu8cD2we-GtA" changeId="1786696015488">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#2b6023e1-86e9-464d-9f7e-4bd0277bd468"/>
       </ownedRepresentationDescriptors>
@@ -496,6 +496,15 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_CBx2MZevEfGeddhnZftQ1A" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CBx2MpevEfGeddhnZftQ1A" x="230" y="100"/>
         </children>
+        <children xmi:type="notation:Node" xmi:id="_6NbIEJe5EfGeddhnZftQ1A" type="2002" element="_6L-9oJe5EfGeddhnZftQ1A">
+          <children xmi:type="notation:Node" xmi:id="_6NbvIJe5EfGeddhnZftQ1A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_6NbvIZe5EfGeddhnZftQ1A" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_6NbvIpe5EfGeddhnZftQ1A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_6NbvI5e5EfGeddhnZftQ1A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_6NbIEZe5EfGeddhnZftQ1A" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6NbIEpe5EfGeddhnZftQ1A" x="280" y="420"/>
+        </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_Tj9P8ZdhEfGu8cD2we-GtA"/>
         <edges xmi:type="notation:Edge" xmi:id="_IUKPUJdkEfGu8cD2we-GtA" type="4001" element="_ITwmsJdkEfGu8cD2we-GtA" source="_pZMd4JdhEfGu8cD2we-GtA" target="_yQcLYJdhEfGu8cD2we-GtA">
           <children xmi:type="notation:Node" xmi:id="_IUKPVJdkEfGu8cD2we-GtA" type="6001">
@@ -545,12 +554,28 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L-fzGpdkEfGu8cD2we-GtA" id="(1.0,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L-fzG5dkEfGu8cD2we-GtA" id="(0.5369458128078818,0.7794117647058824)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_fBLZMJe5EfGeddhnZftQ1A" type="4001" element="_e-124Je5EfGeddhnZftQ1A" source="_CBx2MJevEfGeddhnZftQ1A" target="_pZMd4JdhEfGu8cD2we-GtA">
+          <children xmi:type="notation:Node" xmi:id="_fBNOYJe5EfGeddhnZftQ1A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBNOYZe5EfGeddhnZftQ1A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fBOcgJe5EfGeddhnZftQ1A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBOcgZe5EfGeddhnZftQ1A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fBPDkJe5EfGeddhnZftQ1A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBPDkZe5EfGeddhnZftQ1A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_fBLZMZe5EfGeddhnZftQ1A" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_fBLZMpe5EfGeddhnZftQ1A" fontColor="16777215" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fBLZM5e5EfGeddhnZftQ1A" points="[0, 0, -149, -132]$[149, 132, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fBQ4wJe5EfGeddhnZftQ1A" id="(0.5027624309392266,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fBQ4wZe5EfGeddhnZftQ1A" id="(0.0,0.5882352941176471)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_TkFy0JdhEfGu8cD2we-GtA" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_TkGZ4JdhEfGu8cD2we-GtA"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_pZAQoJdhEfGu8cD2we-GtA" name="Initialize Rover" outgoingEdges="_ITwmsJdkEfGu8cD2we-GtA">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_pZAQoJdhEfGu8cD2we-GtA" name="Initialize Rover" outgoingEdges="_ITwmsJdkEfGu8cD2we-GtA" incomingEdges="_e-124Je5EfGeddhnZftQ1A">
       <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -630,13 +655,35 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CAVEsJevEfGeddhnZftQ1A" name="Perform Lunar Landing">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CAVEsJevEfGeddhnZftQ1A" name="Perform Lunar Landing" outgoingEdges="_e-124Je5EfGeddhnZftQ1A">
       <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#36a8d224-2551-4b20-a722-847da2e4bb40"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#36a8d224-2551-4b20-a722-847da2e4bb40"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CAVrwJevEfGeddhnZftQ1A" borderSize="1" borderSizeComputationExpression="1" borderColor="91,64,64" backgroundStyle="GradientTopToBottom" backgroundColor="255,255,197" foregroundColor="247,218,116">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_e-124Je5EfGeddhnZftQ1A" name="Interaction 4" sourceNode="_CAVEsJevEfGeddhnZftQ1A" targetNode="_pZAQoJdhEfGu8cD2we-GtA" beginLabel="." endLabel=".">
+      <target xmi:type="org.polarsys.capella.core.data.fa:FunctionalExchange" href="Lunar-Rover-Lander.capella#6cfe5888-08e0-4ad3-9a19-c29a37a9244b"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionalExchange" href="Lunar-Rover-Lander.capella#6cfe5888-08e0-4ad3-9a19-c29a37a9244b"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_e-4TIJe5EfGeddhnZftQ1A" strokeColor="91,64,64">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_e-4TIZe5EfGeddhnZftQ1A" labelColor="255,255,255"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_e-4TI5e5EfGeddhnZftQ1A" labelColor="91,64,64"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_e-4TIpe5EfGeddhnZftQ1A" labelColor="255,255,255"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_6L-9oJe5EfGeddhnZftQ1A" name="OperationalActivity 6">
+      <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#7d31184c-1ccf-41f9-8859-88eadec970af"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="Lunar-Rover-Lander.capella#7d31184c-1ccf-41f9-8859-88eadec970af"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_6L-9oZe5EfGeddhnZftQ1A" borderSize="1" borderSizeComputationExpression="1" borderColor="91,64,64" backgroundStyle="GradientTopToBottom" backgroundColor="255,255,197" foregroundColor="247,218,116">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']"/>
