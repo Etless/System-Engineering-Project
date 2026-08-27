@@ -53,9 +53,15 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="fcbf5db7-78c2-4ecc-a759-77eaf0945072" name="Supervise Rover Operations"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-              id="36a8d224-2551-4b20-a722-847da2e4bb40" name="Perform Lunar Landing"/>
+              id="6a703110-34eb-45c4-a10f-c2bfc9859443" name="Prepare for Lunar Landing"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-              id="0c105901-c8be-4b72-af76-9ed696bdd8c1" name="erik-test-commit-remove-this"/>
+              id="4ddbc1bb-474c-47cd-937d-0a560535c8f1" name="Assess Landing Readiness"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="2b67022e-23ee-4e0c-9d5c-a8317248cdfc" name="Perform Lunar Landing"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="26af0a85-4df0-46e2-9a6a-0a61c25f0784" name="Verify Safe Landing"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="d438b7a3-9e0f-441d-8947-f7ec94eadd32" name="Deploy Rover"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="c09feaba-7f15-4a57-9622-5d48f380bee7" name="Initialization Status"
               target="#85630f2d-22b5-49f8-997f-ef293fc8289e" source="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"/>
@@ -63,11 +69,23 @@
               id="9f9091bd-cef8-4eda-bbe4-c91153bfcb2d" name="Rover Health Status"
               target="#fa0a3559-7170-45ff-8d00-00394a4c526d" source="#85630f2d-22b5-49f8-997f-ef293fc8289e"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="ce781200-9d39-484d-b719-49541ec9274c" name="Rover Telemetry" target="#fcbf5db7-78c2-4ecc-a759-77eaf0945072"
-              source="#fa0a3559-7170-45ff-8d00-00394a4c526d"/>
+              id="ce781200-9d39-484d-b719-49541ec9274c" name="Rover Deployment Status"
+              target="#fcbf5db7-78c2-4ecc-a759-77eaf0945072" source="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="6cfe5888-08e0-4ad3-9a19-c29a37a9244b" name="Interaction 4" target="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"
-              source="#36a8d224-2551-4b20-a722-847da2e4bb40"/>
+              id="fc8f6d37-8b84-4823-a468-a5d9ac04c845" name="Landing Preparation Status"
+              target="#4ddbc1bb-474c-47cd-937d-0a560535c8f1" source="#6a703110-34eb-45c4-a10f-c2bfc9859443"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="d49fd1f9-1c60-4afc-a0e2-9e142fe88772" name="Landing Authorization"
+              target="#2b67022e-23ee-4e0c-9d5c-a8317248cdfc" source="#4ddbc1bb-474c-47cd-937d-0a560535c8f1"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="fe53ac40-63cd-47e1-a278-f63739bc8cb5" name="Landing Status" target="#26af0a85-4df0-46e2-9a6a-0a61c25f0784"
+              source="#2b67022e-23ee-4e0c-9d5c-a8317248cdfc"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="901887e9-f9b5-49d5-a246-afba07fa348d" name="Landed Status" target="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"
+              source="#26af0a85-4df0-46e2-9a6a-0a61c25f0784"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="c580ad84-b804-4e35-9fae-92635e7f7b88" name="Communication Established"
+              target="#d438b7a3-9e0f-441d-8947-f7ec94eadd32" source="#fa0a3559-7170-45ff-8d00-00394a4c526d"/>
         </ownedOperationalActivities>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
@@ -113,8 +131,6 @@
             name="Rover Operator" abstractType="#8075ba3b-291a-4811-983e-1922ba1f5dd0"/>
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="b184ad85-00f6-441c-a9a5-f639064de567"
             name="Lunar Lander Service" abstractType="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
-        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4f24d17b-cf55-45e4-bf38-62be9b9778ee"
-            name="OE 5 - erik test bullshit, remove this" abstractType="#161ba451-7260-4a00-8e54-6ce0ef123524"/>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="81e934b1-5374-40af-9151-4dacd2e59963"
             name="Rover">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
@@ -138,9 +154,22 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="4320d5db-709f-4f92-83aa-056313d1091d" targetElement="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"
               sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="b8ff8d2f-c724-483d-9795-fb9dfe184416" targetElement="#6a703110-34eb-45c4-a10f-c2bfc9859443"
+              sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="7d18b194-5c55-4831-981a-de8ea11c0c87" targetElement="#4ddbc1bb-474c-47cd-937d-0a560535c8f1"
+              sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="2f583834-287c-47e7-aadd-fa27788cbfe5" targetElement="#2b67022e-23ee-4e0c-9d5c-a8317248cdfc"
+              sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="b5ea2247-3595-4202-b9d4-f6c8087a87f2" targetElement="#26af0a85-4df0-46e2-9a6a-0a61c25f0784"
+              sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="4b2600cf-bd9d-407a-9631-6695f6d546ad" targetElement="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"
+              sourceElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"/>
         </ownedEntities>
-        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="161ba451-7260-4a00-8e54-6ce0ef123524"
-            name="OE 5 - erik test bullshit, remove this"/>
       </ownedEntityPkg>
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
@@ -151,8 +180,10 @@
             id="e615b0c6-a024-4465-8cda-8f740fa439b0" name="Root System Function">
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="7b37e838-e412-403c-bd8e-4eb8f105ed1a" name="Initialize Rover">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="89ec2a12-fe05-444f-8dbd-52eb13b7b6c1" name="inLanded Status"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="54993d2b-1f4f-4277-9acf-f244e30d2f5b" name=""/>
+                id="54993d2b-1f4f-4277-9acf-f244e30d2f5b" name="outInitialization Status"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="87f93bbd-2b88-4b70-9c20-c276463272c0" targetElement="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"
                 sourceElement="#7b37e838-e412-403c-bd8e-4eb8f105ed1a"/>
@@ -173,6 +204,8 @@
                 id="a0a8fd27-1da7-40ed-81ae-56d4a029c2cc" name="inRover Health Status"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="a49eb019-1e1b-45d2-a727-761974fc35a5" name="outRover Telemetry"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="6f98e65c-b952-4515-9198-faef2f14704c" name="outCommunication Established"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="5f3adcae-5777-4b31-b9d2-9f443e511795" targetElement="#fa0a3559-7170-45ff-8d00-00394a4c526d"
                 sourceElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"/>
@@ -181,9 +214,59 @@
               id="360d1735-4555-4727-983d-071395ccbde5" name="Supervise Rover Operations">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
                 id="59d0cf00-8678-4289-b345-8fa78e2c0911" name="inRover Telemetry"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="7b882f99-8cc1-427f-a2a0-3c1e4bd8334e" name="inRover Deployment Status"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="52fbaee5-f8f9-4a96-9c0a-e29fd6e868be" targetElement="#fcbf5db7-78c2-4ecc-a759-77eaf0945072"
                 sourceElement="#360d1735-4555-4727-983d-071395ccbde5"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="db4b3a8c-e758-40e8-841d-879c0b271391" name="Prepare for Lunar Landing">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="7ca053e0-151e-4ac9-8248-6a5b945a555e" name="outLanding Preparation Status"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="5631bc3f-64c0-4030-ab17-846739bb5022" targetElement="#6a703110-34eb-45c4-a10f-c2bfc9859443"
+                sourceElement="#db4b3a8c-e758-40e8-841d-879c0b271391"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="00b4b951-6821-481e-9f06-021ed7a081d1" name="Assess Landing Readiness">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="d20ae46b-6f49-47c4-8c6a-8ddc3cb8dc88" name="inLanding Preparation Status"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="a98c0dde-1b94-49c9-ba21-b8377fc10dcd" name="outLanding Authorization"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="175310c5-2544-45b9-a232-deff7b4d5548" targetElement="#4ddbc1bb-474c-47cd-937d-0a560535c8f1"
+                sourceElement="#00b4b951-6821-481e-9f06-021ed7a081d1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="60ad812d-eada-442e-aa65-c7e3b0bf6f2f" name="Perform Lunar Landing">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="cace5874-e2dc-434a-bd69-bd64d4a8cccd" name="inLanding Authorization"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="314aed9e-52d4-4814-b774-0c1d1751c3ca" name="outLanding Status"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="253720c4-9768-4f8b-a8a5-31c3ac4df4a3" targetElement="#2b67022e-23ee-4e0c-9d5c-a8317248cdfc"
+                sourceElement="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="92cdea86-cd80-4681-8159-4f4a676335de" name="Verify Safe Landing">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="29f3ada8-2a93-4363-bbd5-0df22106a427" name="inLanding Status"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="7023767d-0dcb-460f-998e-8165879d6b09" name="outLanded Status"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="3ec6e5ce-9280-495e-a561-c64978e50c40" targetElement="#26af0a85-4df0-46e2-9a6a-0a61c25f0784"
+                sourceElement="#92cdea86-cd80-4681-8159-4f4a676335de"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="8b54f059-0f05-4aaf-8f53-d7195cf5a384" name="Deploy Rover">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" name="inCommunication Established"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="a0aca01d-0d70-429a-8f4d-8d239e268faf" name="outRover Deployment Status"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="9c55e5d8-0aef-4245-90f2-f94d42530c95" targetElement="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"
+                sourceElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
           </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="76bfb8ad-719a-432e-88c8-f9c4f8f65d4d" targetElement="#2b6023e1-86e9-464d-9f7e-4bd0277bd468"
@@ -203,11 +286,46 @@
                 sourceElement="#94f192b6-cb79-4d39-9d60-0485cd9098ff"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="b57b1bbe-0a5a-4dd8-8d9b-7074dae78ebc" name="Rover Telemetry" target="#59d0cf00-8678-4289-b345-8fa78e2c0911"
-              source="#a49eb019-1e1b-45d2-a727-761974fc35a5">
+              id="416f8673-4e1f-4278-ae04-a4ecb7ddf411" name="Rover Deployment Status"
+              target="#7b882f99-8cc1-427f-a2a0-3c1e4bd8334e" source="#a0aca01d-0d70-429a-8f4d-8d239e268faf">
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="84af4d8e-1569-4575-81c6-221e9604ab1d" targetElement="#ce781200-9d39-484d-b719-49541ec9274c"
-                sourceElement="#b57b1bbe-0a5a-4dd8-8d9b-7074dae78ebc"/>
+                id="dd2024c3-7477-4a32-bcfe-1c740e5fd678" targetElement="#ce781200-9d39-484d-b719-49541ec9274c"
+                sourceElement="#416f8673-4e1f-4278-ae04-a4ecb7ddf411"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="1baf8980-272d-4518-8a64-fa8519eaaff3" name="Landing Preparation Status"
+              target="#d20ae46b-6f49-47c4-8c6a-8ddc3cb8dc88" source="#7ca053e0-151e-4ac9-8248-6a5b945a555e">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="f363bc13-4b94-4e23-89f1-783d1c570af9" targetElement="#fc8f6d37-8b84-4823-a468-a5d9ac04c845"
+                sourceElement="#1baf8980-272d-4518-8a64-fa8519eaaff3"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="5bd9d0b9-5492-49aa-8eb8-32fed4990448" name="Landing Authorization"
+              target="#cace5874-e2dc-434a-bd69-bd64d4a8cccd" source="#a98c0dde-1b94-49c9-ba21-b8377fc10dcd">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="f2fe1fe4-308b-4e9f-896e-e46a5dbc56e6" targetElement="#d49fd1f9-1c60-4afc-a0e2-9e142fe88772"
+                sourceElement="#5bd9d0b9-5492-49aa-8eb8-32fed4990448"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="8e678825-65a3-4c10-b7e8-ed42a3697d0a" name="Landing Status" target="#29f3ada8-2a93-4363-bbd5-0df22106a427"
+              source="#314aed9e-52d4-4814-b774-0c1d1751c3ca">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="42496516-9566-43f5-ba33-3d0c6b5bd14f" targetElement="#fe53ac40-63cd-47e1-a278-f63739bc8cb5"
+                sourceElement="#8e678825-65a3-4c10-b7e8-ed42a3697d0a"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="9160191b-6b90-440f-8788-92f6f8bcc29a" name="Landed Status" target="#89ec2a12-fe05-444f-8dbd-52eb13b7b6c1"
+              source="#7023767d-0dcb-460f-998e-8165879d6b09">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="1db74955-1e9a-4170-ad00-7d6fae21dd3c" targetElement="#901887e9-f9b5-49d5-a246-afba07fa348d"
+                sourceElement="#9160191b-6b90-440f-8788-92f6f8bcc29a"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="87138525-3bee-489d-a8d4-4a2723e33b0e" name="Communication Established"
+              target="#d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" source="#6f98e65c-b952-4515-9198-faef2f14704c">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="b00e4d56-ed14-4bc2-bd30-f7def29c0a4e" targetElement="#c580ad84-b804-4e35-9fae-92635e7f7b88"
+                sourceElement="#87138525-3bee-489d-a8d4-4a2723e33b0e"/>
           </ownedFunctionalExchanges>
         </ownedSystemFunctions>
       </ownedFunctionPkg>
