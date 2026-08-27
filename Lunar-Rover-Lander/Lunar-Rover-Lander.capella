@@ -175,8 +175,42 @@
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
         id="555ac208-c978-440f-852d-88a827c40fd5" name="System Analysis">
-      <ownedExtensions xsi:type="CapellaRequirements:CapellaModule" id="9f8f6740-6d11-4b45-8243-59875f2861ee">
-        <ownedRequirements xsi:type="Requirements:Folder" id="e8c6affb-fbfc-4365-b1f6-c73a671039cf"/>
+      <ownedExtensions xsi:type="CapellaRequirements:CapellaModule" id="9f8f6740-6d11-4b45-8243-59875f2861ee"
+          ReqIFLongName="Requirements">
+        <ownedRequirements xsi:type="Requirements:Folder" id="e8c6affb-fbfc-4365-b1f6-c73a671039cf"
+            ReqIFLongName="[REQ] Stakeholder">
+          <ownedRequirements xsi:type="Requirements:Requirement" id="79ee3812-36b5-412b-a9d2-9fe518a23417"
+              ReqIFLongName="MIS-001" ReqIFName="" ReqIFPrefix="" ReqIFChapterName=""
+              ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall transport the customer-provided rover from the 100 km stable circular lunar orbit to the lunar surface.&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="ae158c9f-4bae-4013-9d65-5f92793a42d7" source="#79ee3812-36b5-412b-a9d2-9fe518a23417"
+                target="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"/>
+          </ownedRequirements>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="faae00c3-6340-4d5c-8286-a055133b25f9"
+              ReqIFLongName="MIS-002" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall protect the rover throughout descent, landing, and deployment.&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="0fe755bf-f952-47bf-8402-bcc07377f87a" source="#faae00c3-6340-4d5c-8286-a055133b25f9"
+                target="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="39295ed1-fcec-4986-a901-9c717cef4a49" source="#faae00c3-6340-4d5c-8286-a055133b25f9"
+                target="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="4f3614ce-baa1-4421-9348-619aca4c3329" source="#faae00c3-6340-4d5c-8286-a055133b25f9"
+                target="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"/>
+          </ownedRequirements>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="812c9218-24a8-4917-8842-7e13fa18a26f"
+              ReqIFLongName="MIS-003" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall deploy the rover onto the lunar surface in its nominal operational configuration.&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="e92cdc0b-2591-4222-a881-a167bb1bf538" source="#812c9218-24a8-4917-8842-7e13fa18a26f"
+                target="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
+          </ownedRequirements>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="0a1008eb-74ea-4bb2-baf0-46109ee5c76a"
+              ReqIFLongName="MIS-004" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall act as an relay between the rover and ground station&lt;/span>&lt;/p>&#xA;"/>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="2d4896c4-698c-473e-8e22-d76e6b164493"
+              ReqIFLongName="MIS-005" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall supply 10w of power to the rover during transport&lt;/span>&lt;/p>&#xA;"/>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="2088acd4-e09d-4c4d-bad2-37aa8b08f71b"
+              ReqIFLongName="MIS-006" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall support initial rover health verification after deployment.&lt;/span>&lt;/p>&#xA;"/>
+        </ownedRequirements>
       </ownedExtensions>
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
           id="4da22a54-feb9-42a3-aed6-c2bed4baa5f1" name="System Functions">
@@ -214,8 +248,6 @@
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="360d1735-4555-4727-983d-071395ccbde5" name="Supervise Rover Operations">
-            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="59d0cf00-8678-4289-b345-8fa78e2c0911" name="inRover Telemetry"/>
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
                 id="7b882f99-8cc1-427f-a2a0-3c1e4bd8334e" name="inRover Deployment Status"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
@@ -552,9 +584,6 @@
               sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="268ada79-ce6b-44a2-99d2-8d7edea9064f" targetElement="#db4b3a8c-e758-40e8-841d-879c0b271391"
-              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="400d2447-ae08-4660-9dee-bc40860a1a4c" targetElement="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"
               sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="7db29173-586b-40b5-8235-a2d9d4efee14" targetElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"
