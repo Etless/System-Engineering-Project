@@ -226,7 +226,11 @@
           </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="2088acd4-e09d-4c4d-bad2-37aa8b08f71b"
               ReqIFLongName="" ReqIFName="MIS-006" ReqIFPrefix="" ReqIFChapterName=""
-              ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall support initial rover health verification after deployment.&lt;/span>&lt;/p>&#xA;"/>
+              ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall support initial rover health verification after deployment.&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="6465c063-1535-4ac8-8178-4e685aa7eb89" source="#2088acd4-e09d-4c4d-bad2-37aa8b08f71b"
+                target="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"/>
+          </ownedRequirements>
         </ownedRequirements>
       </ownedExtensions>
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
@@ -381,8 +385,6 @@
                 id="d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" name="inCommunication Established"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="3ca35185-31ef-4595-86d4-608eb2d8ea21" name="FOP 1"/>
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="074e865a-efa5-4e16-97fc-c1f6ced23f02" name="SystemFunction 1"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="9c55e5d8-0aef-4245-90f2-f94d42530c95" targetElement="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"
                 sourceElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
