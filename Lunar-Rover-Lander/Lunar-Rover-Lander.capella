@@ -1140,6 +1140,9 @@
             <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
                 id="67ad3194-c3db-4829-8464-828334ad2912" name="Default Region"/>
           </ownedStateMachines>
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="4245af76-6cbd-4c79-9202-cc877c17ffe6" targetElement="#84bff618-76bb-4aea-a9d8-95f4600cafb0"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
         </ownedSystemComponents>
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
             id="51083b51-0c87-4c7e-82d0-911ea8a0eb15" name="Rover" actor="true">
@@ -1149,11 +1152,17 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="35798fa7-0a1c-43ae-b113-4c34574720a4" targetElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"
               sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="2e5ee77f-f191-4643-a4f7-8f14249bbeee" targetElement="#81e934b1-5374-40af-9151-4dacd2e59963"
+              sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
         </ownedSystemComponents>
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
             id="9b520ecf-86f6-49cf-ae08-66c2a043961c" name="Ground Station" actor="true">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="e28631b1-5e4b-4dc3-b80f-c5828f1c9343" targetElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"
+              sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="1aec722b-ea7b-4684-90cc-65417ce932fc" targetElement="#68241c71-05c0-4564-b79c-1efe49b45060"
               sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
         </ownedSystemComponents>
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
@@ -1161,6 +1170,9 @@
             human="true">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="ceb1e064-d135-4bb7-b5ee-060ae331008c" targetElement="#360d1735-4555-4727-983d-071395ccbde5"
+              sourceElement="#7dd7eab3-5ef1-40d8-b002-283f6f8a359d"/>
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="381853b5-4f87-4397-b0a2-eace00b96345" targetElement="#8075ba3b-291a-4811-983e-1922ba1f5dd0"
               sourceElement="#7dd7eab3-5ef1-40d8-b002-283f6f8a359d"/>
         </ownedSystemComponents>
       </ownedSystemComponentPkg>
