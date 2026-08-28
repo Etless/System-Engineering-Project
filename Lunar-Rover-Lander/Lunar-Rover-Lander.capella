@@ -48,7 +48,7 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="d9a91ffb-ac5d-4832-b69f-5430b918c3ad" name="Initialize Rover"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-              id="85630f2d-22b5-49f8-997f-ef293fc8289e" name="Verify Rover Health"/>
+              id="85630f2d-22b5-49f8-997f-ef293fc8289e" name="Perform Pre-Deployment Rover Health Check"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="fa0a3559-7170-45ff-8d00-00394a4c526d" name="Establish Communication"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
@@ -63,15 +63,17 @@
               id="26af0a85-4df0-46e2-9a6a-0a61c25f0784" name="Verify Safe Landing"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="d438b7a3-9e0f-441d-8947-f7ec94eadd32" name="Deploy Rover"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="c73f73e6-76c8-4fca-8f76-7b86d173b0d9" name="Perform Post-Deploment Health Check"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="c09feaba-7f15-4a57-9622-5d48f380bee7" name="Initialization Status"
               target="#85630f2d-22b5-49f8-997f-ef293fc8289e" source="#d9a91ffb-ac5d-4832-b69f-5430b918c3ad"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="9f9091bd-cef8-4eda-bbe4-c91153bfcb2d" name="Rover Health Status"
+              id="9f9091bd-cef8-4eda-bbe4-c91153bfcb2d" name="Pre-Deploment Rover Health Status"
               target="#fa0a3559-7170-45ff-8d00-00394a4c526d" source="#85630f2d-22b5-49f8-997f-ef293fc8289e"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="ce781200-9d39-484d-b719-49541ec9274c" name="Rover Deployment Status"
-              target="#fcbf5db7-78c2-4ecc-a759-77eaf0945072" source="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"/>
+              target="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9" source="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="fc8f6d37-8b84-4823-a468-a5d9ac04c845" name="Landing Preparation Status"
               target="#4ddbc1bb-474c-47cd-937d-0a560535c8f1" source="#6a703110-34eb-45c4-a10f-c2bfc9859443"/>
@@ -87,6 +89,9 @@
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="c580ad84-b804-4e35-9fae-92635e7f7b88" name="Communication Established"
               target="#d438b7a3-9e0f-441d-8947-f7ec94eadd32" source="#fa0a3559-7170-45ff-8d00-00394a4c526d"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="cbdcc8e1-ebf7-4919-860b-d4c854173722" name="Post-Deploment Rover Health Check"
+              target="#fcbf5db7-78c2-4ecc-a759-77eaf0945072" source="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9"/>
         </ownedOperationalActivities>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
@@ -137,6 +142,9 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="aa45a8b2-0687-4ed2-8cb0-bedc82e20f24" targetElement="#85630f2d-22b5-49f8-997f-ef293fc8289e"
               sourceElement="#81e934b1-5374-40af-9151-4dacd2e59963"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="ae826501-e81e-491b-bf34-81cf1f371ad6" targetElement="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9"
+              sourceElement="#81e934b1-5374-40af-9151-4dacd2e59963"/>
         </ownedEntities>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="68241c71-05c0-4564-b79c-1efe49b45060"
             name="Ground Station">
@@ -180,14 +188,14 @@
         <ownedRequirements xsi:type="Requirements:Folder" id="e8c6affb-fbfc-4365-b1f6-c73a671039cf"
             ReqIFLongName="[REQ] Stakeholder">
           <ownedRequirements xsi:type="Requirements:Requirement" id="79ee3812-36b5-412b-a9d2-9fe518a23417"
-              ReqIFLongName="MIS-001" ReqIFName="" ReqIFPrefix="" ReqIFChapterName=""
+              ReqIFLongName="" ReqIFName="MIS-001" ReqIFPrefix="" ReqIFChapterName=""
               ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall transport the customer-provided rover from the 100 km stable circular lunar orbit to the lunar surface.&lt;/span>&lt;/p>&#xA;">
             <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
                 id="ae158c9f-4bae-4013-9d65-5f92793a42d7" source="#79ee3812-36b5-412b-a9d2-9fe518a23417"
                 target="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"/>
           </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="faae00c3-6340-4d5c-8286-a055133b25f9"
-              ReqIFLongName="MIS-002" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall protect the rover throughout descent, landing, and deployment.&lt;/span>&lt;/p>&#xA;">
+              ReqIFLongName="" ReqIFName="MIS-002" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall protect the rover throughout descent, landing, and deployment.&lt;/span>&lt;/p>&#xA;">
             <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
                 id="0fe755bf-f952-47bf-8402-bcc07377f87a" source="#faae00c3-6340-4d5c-8286-a055133b25f9"
                 target="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
@@ -199,17 +207,26 @@
                 target="#60ad812d-eada-442e-aa65-c7e3b0bf6f2f"/>
           </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="812c9218-24a8-4917-8842-7e13fa18a26f"
-              ReqIFLongName="MIS-003" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall deploy the rover onto the lunar surface in its nominal operational configuration.&lt;/span>&lt;/p>&#xA;">
+              ReqIFLongName="" ReqIFName="MIS-003" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall deploy the rover onto the lunar surface in its nominal operational configuration.&lt;/span>&lt;/p>&#xA;">
             <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
                 id="e92cdc0b-2591-4222-a881-a167bb1bf538" source="#812c9218-24a8-4917-8842-7e13fa18a26f"
                 target="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
           </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="0a1008eb-74ea-4bb2-baf0-46109ee5c76a"
-              ReqIFLongName="MIS-004" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall act as an relay between the rover and ground station&lt;/span>&lt;/p>&#xA;"/>
+              ReqIFLongName="" ReqIFName="MIS-004" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall act as an relay between the rover and ground station&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="2012088c-e2bb-4b8c-97ad-62fec07d2efd" source="#0a1008eb-74ea-4bb2-baf0-46109ee5c76a"
+                target="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="2d4896c4-698c-473e-8e22-d76e6b164493"
-              ReqIFLongName="MIS-005" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall supply 10w of power to the rover during transport&lt;/span>&lt;/p>&#xA;"/>
+              ReqIFLongName="" ReqIFName="MIS-005" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Lander shall supply 10w of power to the rover during transport&lt;/span>&lt;/p>&#xA;">
+            <ownedRelations xsi:type="CapellaRequirements:CapellaIncomingRelation"
+                id="cefa6c98-a601-4cbb-b8ba-6a10ad16c99d" source="#2d4896c4-698c-473e-8e22-d76e6b164493"
+                target="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          </ownedRequirements>
           <ownedRequirements xsi:type="Requirements:Requirement" id="2088acd4-e09d-4c4d-bad2-37aa8b08f71b"
-              ReqIFLongName="MIS-006" ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall support initial rover health verification after deployment.&lt;/span>&lt;/p>&#xA;"/>
+              ReqIFLongName="" ReqIFName="MIS-006" ReqIFPrefix="" ReqIFChapterName=""
+              ReqIFText="&lt;p>&lt;span style=&quot;font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.66px&quot;>The Lunar Delivery System shall support initial rover health verification after deployment.&lt;/span>&lt;/p>&#xA;"/>
         </ownedRequirements>
       </ownedExtensions>
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
@@ -249,7 +266,7 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="360d1735-4555-4727-983d-071395ccbde5" name="Supervise Rover Operations">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="7b882f99-8cc1-427f-a2a0-3c1e4bd8334e" name="inRover Deployment Status"/>
+                id="8de19b29-2bd2-4c96-bb50-58b50af37959" name="inPost-Deploment Rover Health Check"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="52fbaee5-f8f9-4a96-9c0a-e29fd6e868be" targetElement="#fcbf5db7-78c2-4ecc-a759-77eaf0945072"
                 sourceElement="#360d1735-4555-4727-983d-071395ccbde5"/>
@@ -363,12 +380,22 @@
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
                 id="d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" name="inCommunication Established"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="a0aca01d-0d70-429a-8f4d-8d239e268faf" name="outRover Deployment Status"/>
+                id="3ca35185-31ef-4595-86d4-608eb2d8ea21" name="FOP 1"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="074e865a-efa5-4e16-97fc-c1f6ced23f02" name="SystemFunction 1"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="9c55e5d8-0aef-4245-90f2-f94d42530c95" targetElement="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"
                 sourceElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a" name="Perform Post-Deploment Health Check">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="f9357bae-8105-4cda-91ce-dd5b6834156e" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="33daaad0-b621-48bf-ae3e-122df4ace82d" name="outPost-Deploment Rover Health Check"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="31b453dd-a514-4296-aa42-0ae53d67df61" targetElement="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9"
+                sourceElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"/>
           </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="76bfb8ad-719a-432e-88c8-f9c4f8f65d4d" targetElement="#2b6023e1-86e9-464d-9f7e-4bd0277bd468"
@@ -386,13 +413,6 @@
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="fc8c69c5-f587-4aaf-a639-9f904a21ba0c" targetElement="#9f9091bd-cef8-4eda-bbe4-c91153bfcb2d"
                 sourceElement="#94f192b6-cb79-4d39-9d60-0485cd9098ff"/>
-          </ownedFunctionalExchanges>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="416f8673-4e1f-4278-ae04-a4ecb7ddf411" name="Rover Deployment Status"
-              target="#7b882f99-8cc1-427f-a2a0-3c1e4bd8334e" source="#a0aca01d-0d70-429a-8f4d-8d239e268faf">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="dd2024c3-7477-4a32-bcfe-1c740e5fd678" targetElement="#ce781200-9d39-484d-b719-49541ec9274c"
-                sourceElement="#416f8673-4e1f-4278-ae04-a4ecb7ddf411"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="1baf8980-272d-4518-8a64-fa8519eaaff3" name="Landing Preparation Status"
@@ -429,6 +449,16 @@
                 id="b00e4d56-ed14-4bc2-bd30-f7def29c0a4e" targetElement="#c580ad84-b804-4e35-9fae-92635e7f7b88"
                 sourceElement="#87138525-3bee-489d-a8d4-4a2723e33b0e"/>
           </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="ece3ab82-4418-465b-a006-d5560314bd09" name="Post-Deploment Rover Health Check"
+              target="#8de19b29-2bd2-4c96-bb50-58b50af37959" source="#33daaad0-b621-48bf-ae3e-122df4ace82d">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="d0521946-04b5-4968-a4a5-1a238462089c" targetElement="#cbdcc8e1-ebf7-4919-860b-d4c854173722"
+                sourceElement="#ece3ab82-4418-465b-a006-d5560314bd09"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="a8657789-0a39-4b95-8afe-58a7f9fe7258" name="Rover Deployment Status"
+              target="#f9357bae-8105-4cda-91ce-dd5b6834156e" source="#3ca35185-31ef-4595-86d4-608eb2d8ea21"/>
         </ownedSystemFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.ctx:CapabilityPkg"
@@ -456,6 +486,18 @@
           <ownedAbstractCapabilityRealizations xsi:type="org.polarsys.capella.core.data.interaction:AbstractCapabilityRealization"
               id="0b6555d9-8db2-4e6f-91e6-719f4b67a732" targetElement="#6b14cda0-c8e4-4cd0-8189-990ec32db1b2"
               sourceElement="#65712782-8764-46e2-81ea-0f1bafb852d9"/>
+        </ownedCapabilities>
+        <ownedCapabilities xsi:type="org.polarsys.capella.core.data.ctx:Capability"
+            id="b5b7ab91-2480-4bbc-b5e3-3ff6b4a1556a" name="Perform Post-Deploment Health Check">
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="30c0a86f-a0a2-4267-bb1e-9a135d466f09" targetElement="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9"
+              sourceElement="#b5b7ab91-2480-4bbc-b5e3-3ff6b4a1556a"/>
+        </ownedCapabilities>
+        <ownedCapabilities xsi:type="org.polarsys.capella.core.data.ctx:Capability"
+            id="0ea08f74-c3a6-4a33-b15a-6169414426dd" name="Perform Pre-Deployment Rover Health Check">
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="bcb545d3-0a63-4b6b-887c-d7a5291d84c3" targetElement="#85630f2d-22b5-49f8-997f-ef293fc8289e"
+              sourceElement="#0ea08f74-c3a6-4a33-b15a-6169414426dd"/>
         </ownedCapabilities>
       </ownedAbstractCapabilityPkg>
       <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
@@ -613,6 +655,9 @@
             id="51083b51-0c87-4c7e-82d0-911ea8a0eb15" name="Rover" actor="true">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="0ed05006-aad9-41e8-aa5b-0e5f26721d1d" targetElement="#039d11e6-02c5-4c89-83ef-ef1ca49d965d"
+              sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="35798fa7-0a1c-43ae-b113-4c34574720a4" targetElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"
               sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
         </ownedSystemComponents>
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
