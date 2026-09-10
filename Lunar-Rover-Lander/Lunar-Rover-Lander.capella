@@ -231,6 +231,12 @@
                 id="6465c063-1535-4ac8-8178-4e685aa7eb89" source="#2088acd4-e09d-4c4d-bad2-37aa8b08f71b"
                 target="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"/>
           </ownedRequirements>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="b45667d8-5bdf-4858-9d42-15c6dcc8b849"
+              ReqIFName="MIS-007" ReqIFText="&lt;p>The Lunar Delivery System shall accommodate a rover mass of 15 kg.&lt;/p>&#xA;"/>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="0643f725-a5be-4025-8573-65fc96c086d9"
+              ReqIFName="MIS-008" ReqIFText="&lt;p>The Lunar Delivery System shall accommodate a rover with maximum folded size of 0.50 &amp;times; 0.20 &amp;times; 0.20 m.&lt;/p>&#xA;"/>
+          <ownedRequirements xsi:type="Requirements:Requirement" id="fcc1b413-1960-4e3c-bc21-cb9a48a9ad63"
+              ReqIFName="MIS-009" ReqIFText="&lt;p>The Lunar Delivery System shall provide sufficient clearance for deployment of a rover with maximum deployed dimensions of 0.90 &amp;times; 0.70 &amp;times; 0.45 m.&lt;/p>&#xA;"/>
         </ownedRequirements>
       </ownedExtensions>
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
@@ -263,6 +269,14 @@
                 id="a0a8fd27-1da7-40ed-81ae-56d4a029c2cc" name="inRover Health Status"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="6f98e65c-b952-4515-9198-faef2f14704c" name="outCommunication Established"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="a4c66bbe-6549-4cd9-8a99-bbd70657dc2c" name="Provide Communication Link"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="1fb5175e-70e5-49f2-af59-3e0858dd9dc0" name="Acquire Lander Link"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="4c5e45fc-1e66-40d6-8c77-ba6f6d8d6850" name="Transmit Lander Telemetry"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="909e5a91-6bbc-4470-8486-a763b1df3da7" name="Receive Lander Telemetry"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="5f3adcae-5777-4b31-b9d2-9f443e511795" targetElement="#fa0a3559-7170-45ff-8d00-00394a4c526d"
                 sourceElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"/>
