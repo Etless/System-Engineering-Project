@@ -265,26 +265,41 @@
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="8fef18b1-af06-451a-8b20-a6ea56de7645" name="Establish Communication">
-            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="a0a8fd27-1da7-40ed-81ae-56d4a029c2cc" name="inRover Health Status"/>
-            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="6f98e65c-b952-4515-9198-faef2f14704c" name="outCommunication Established"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="a4c66bbe-6549-4cd9-8a99-bbd70657dc2c" name="Provide Communication Link"/>
+                id="a4c66bbe-6549-4cd9-8a99-bbd70657dc2c" name="Provide Communication Link">
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="5c59f0b1-37dc-41a0-b4be-5f64a86771c5" name="FOP 1"/>
+            </ownedFunctions>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="1fb5175e-70e5-49f2-af59-3e0858dd9dc0" name="Acquire Lander Link"/>
+                id="1fb5175e-70e5-49f2-af59-3e0858dd9dc0" name="Acquire Lander Link">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="4f0f59db-a6b9-4049-8197-13852bb19fe2" name="FIP 1"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="b24da3c2-0370-41b5-8b2c-1e752cd70b8a" name="FOP 1"/>
+            </ownedFunctions>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="4c5e45fc-1e66-40d6-8c77-ba6f6d8d6850" name="Transmit Lander Telemetry"/>
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="909e5a91-6bbc-4470-8486-a763b1df3da7" name="Receive Lander Telemetry"/>
+                id="8011956a-a04f-4f79-ba40-354442396b86" name="Verify Communication Link">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="e9f81e15-afd8-4c2a-984e-474201664472" name="FIP 1"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="33891916-1e81-4014-acd8-105ad969b74a" name="FOP 1"/>
+            </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="5f3adcae-5777-4b31-b9d2-9f443e511795" targetElement="#fa0a3559-7170-45ff-8d00-00394a4c526d"
                 sourceElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"/>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="7b16db30-0511-472a-90ab-074dac5553f3" name="Link Request" target="#4f0f59db-a6b9-4049-8197-13852bb19fe2"
+                source="#5c59f0b1-37dc-41a0-b4be-5f64a86771c5"/>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="dbea2930-e13d-4f66-a89c-ffa77de73283" name="Link Acquisition Status"
+                target="#e9f81e15-afd8-4c2a-984e-474201664472" source="#b24da3c2-0370-41b5-8b2c-1e752cd70b8a"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="360d1735-4555-4727-983d-071395ccbde5" name="Supervise Rover Operations">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="8de19b29-2bd2-4c96-bb50-58b50af37959" name="inPost-Deploment Rover Health Check"/>
+                id="1eeafd90-ba9b-4a7c-b6fd-9e21be6a45ca" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="3ee84110-a58b-4ee6-91d3-01c6f9ab2ba2" name="FOP 1"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="52fbaee5-f8f9-4a96-9c0a-e29fd6e868be" targetElement="#fcbf5db7-78c2-4ecc-a759-77eaf0945072"
                 sourceElement="#360d1735-4555-4727-983d-071395ccbde5"/>
@@ -401,13 +416,27 @@
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="8b54f059-0f05-4aaf-8f53-d7195cf5a384" name="Deploy Rover">
-            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" name="inCommunication Established"/>
-            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="3ca35185-31ef-4595-86d4-608eb2d8ea21" name="FOP 1"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="8430c4d6-a669-412c-8405-41ce6a8c3922" name="Deploy Rover Ramp">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="fb6c93a6-e056-4a6c-81ef-2bb1bad631e7" name="FIP 1"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="441d65d0-f27f-4383-b42d-726fc6b1eadf" name="FOP 1"/>
+            </ownedFunctions>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+                id="a131c763-c447-48f9-8b4d-8c2817378000" name="Release Rover Restraints">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="aabc86c3-3b7d-485f-96fe-5cdb2eb67701" name="FIP 1"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="3ca35185-31ef-4595-86d4-608eb2d8ea21" name="FOP 1"/>
+            </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="9c55e5d8-0aef-4245-90f2-f94d42530c95" targetElement="#d438b7a3-9e0f-441d-8947-f7ec94eadd32"
                 sourceElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"/>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="e1be1a74-9436-4a2a-ad99-4e2b58148a4d" name="Ramp Deployment Status"
+                target="#aabc86c3-3b7d-485f-96fe-5cdb2eb67701" source="#441d65d0-f27f-4383-b42d-726fc6b1eadf"
+                exchangedItems="#cb167ad9-8919-460e-8969-12e17e093b87"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a" name="Perform Post-Deploment Health Check">
@@ -415,9 +444,86 @@
                 id="f9357bae-8105-4cda-91ce-dd5b6834156e" name="FIP 1"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="33daaad0-b621-48bf-ae3e-122df4ace82d" name="outPost-Deploment Rover Health Check"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="43044765-41a9-4705-bf18-51a131aa24fd" name="FOP 2"/>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="31b453dd-a514-4296-aa42-0ae53d67df61" targetElement="#c73f73e6-76c8-4fca-8f76-7b86d173b0d9"
                 sourceElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="4c5e45fc-1e66-40d6-8c77-ba6f6d8d6850" name="Transmit Lander Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="be5e5f35-266a-4c58-910e-ad99d8e9163e" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="372e3381-8799-4e33-a0ca-f3a6ef043ab3" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="2e0ca8ca-ca39-4fd4-bbdd-c9b99e1f2407" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="909e5a91-6bbc-4470-8486-a763b1df3da7" name="Receive Lander Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="5f8ed159-ab02-4283-968a-62ea03e4c561" name="FIP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="7325680b-2997-43b8-a0cf-168e55d46899" name="Receive Rover Health Status">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="a0a8fd27-1da7-40ed-81ae-56d4a029c2cc" name="inRover Health Status"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="8de19b29-2bd2-4c96-bb50-58b50af37959" name="inPost-Deploment Rover Health Check"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="d3641857-4fde-4b4c-9914-c875f3e29af0" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="1e3c06ce-7ef8-4fea-8c0b-d1c2ac6c6e15" name="Authorize Rover Deploment">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="28278c1c-dc23-4252-940f-7d9bf70802a7" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="82f77071-c302-404d-a6db-dff9857f639a" name="Receive Deploment Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="bb7d6ed5-c776-472c-a5eb-2ff54fddeed9" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="366b993a-a430-468c-90b9-b8a3744acb51" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="39b7d418-1eca-4021-a2f4-f8d1c46d2ba1" name="Provide Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="75a859f4-3030-4556-875d-d9f358b62bac" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="5671d1bb-c674-4348-af74-8e5b86c28181" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="9ebdfe55-87c2-471f-872f-aee7eadf0221" name="Relay Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="417636ce-1112-4084-b238-ec577325d603" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="8a52146f-3532-4365-9824-c58825c4702d" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="b62a401b-b3ad-474a-afe5-521036816f84" name="Receive Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="d2abab63-ad34-46e5-81b0-86b8a458cda2" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="26886101-805e-411a-89cd-0c6931fbf1d9" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="e89b7193-f6cb-4edf-bbfc-93a76382e922" name="Transmit Rover Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="5a6d98fb-7080-48cf-af92-f9f045305b2a" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="e0b5068a-4e83-4528-a9e2-9133df27b096" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="bf0cf181-6f0e-4bd1-9a3d-705c4205ff90" name="Relay Rover Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="24dd6759-1b85-489d-a088-3a65ef032b6e" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="b656e9d9-f081-423a-ba43-52cf8ced3fce" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="ffc97e0c-2023-4c80-8293-edaa5e64413f" name="Receive Rover Commands">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="e5ad02fe-be9a-4469-b242-5bbb4f71620b" name="FIP 1"/>
           </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="76bfb8ad-719a-432e-88c8-f9c4f8f65d4d" targetElement="#2b6023e1-86e9-464d-9f7e-4bd0277bd468"
@@ -465,14 +571,7 @@
                 sourceElement="#9160191b-6b90-440f-8788-92f6f8bcc29a"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="87138525-3bee-489d-a8d4-4a2723e33b0e" name="Communication Established"
-              target="#d82ffdc3-1b21-45c5-9a86-8352a2f0ff08" source="#6f98e65c-b952-4515-9198-faef2f14704c">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="b00e4d56-ed14-4bc2-bd30-f7def29c0a4e" targetElement="#c580ad84-b804-4e35-9fae-92635e7f7b88"
-                sourceElement="#87138525-3bee-489d-a8d4-4a2723e33b0e"/>
-          </ownedFunctionalExchanges>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="ece3ab82-4418-465b-a006-d5560314bd09" name="Post-Deploment Rover Health Check"
+              id="ece3ab82-4418-465b-a006-d5560314bd09" name="Post-Deploment Health Check Status"
               target="#8de19b29-2bd2-4c96-bb50-58b50af37959" source="#33daaad0-b621-48bf-ae3e-122df4ace82d">
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="d0521946-04b5-4968-a4a5-1a238462089c" targetElement="#cbdcc8e1-ebf7-4919-860b-d4c854173722"
@@ -487,6 +586,42 @@
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="ecb8d591-263d-4c5c-ab35-c9b30fec3e92" name="Power Preparation Status"
               target="#f4b3cd1c-f34a-4b65-b04d-829155b1edba" source="#7ca053e0-151e-4ac9-8248-6a5b945a555e"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="63782d00-f933-4ebb-b9f4-543a66690aaa" name="Communication Established"
+              target="#be5e5f35-266a-4c58-910e-ad99d8e9163e" source="#33891916-1e81-4014-acd8-105ad969b74a"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="b74b80c8-ef9d-4b39-911b-df553f817882" name="Lander Telemetry" target="#5f8ed159-ab02-4283-968a-62ea03e4c561"
+              source="#2e0ca8ca-ca39-4fd4-bbdd-c9b99e1f2407"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="71efdd1c-931e-4b2a-a653-bccffc8d3fad" name="Rover Operational Readiness"
+              target="#75a859f4-3030-4556-875d-d9f358b62bac" source="#43044765-41a9-4705-bf18-51a131aa24fd"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="e2707a38-8997-449d-8c7d-ff43c800995a" name="Health Telemetry" target="#372e3381-8799-4e33-a0ca-f3a6ef043ab3"
+              source="#d3641857-4fde-4b4c-9914-c875f3e29af0"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="c11d3416-9e58-430b-9b22-eb7f66ff73b4" name="Rover Telemetry" target="#417636ce-1112-4084-b238-ec577325d603"
+              source="#5671d1bb-c674-4348-af74-8e5b86c28181"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="15251fbd-833b-43eb-ae64-d01b2da583b1" name="Relay Rover Telemetry"
+              target="#d2abab63-ad34-46e5-81b0-86b8a458cda2" source="#8a52146f-3532-4365-9824-c58825c4702d"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="3b15b6d0-64c8-479a-a7e7-119d71528a02" name="Rover Telemtry" target="#1eeafd90-ba9b-4a7c-b6fd-9e21be6a45ca"
+              source="#26886101-805e-411a-89cd-0c6931fbf1d9"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="d1eb27ff-5539-4bed-8bcc-0629433ec7a1" name="Rover Command" target="#5a6d98fb-7080-48cf-af92-f9f045305b2a"
+              source="#3ee84110-a58b-4ee6-91d3-01c6f9ab2ba2"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="3271c1a6-8e56-4391-9e0c-6730fbcbbea1" name="Rover Command" target="#24dd6759-1b85-489d-a088-3a65ef032b6e"
+              source="#e0b5068a-4e83-4528-a9e2-9133df27b096"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="99b50028-486c-48c6-bbfd-41597bc5d8c5" name="Relayed Rover Command"
+              target="#e5ad02fe-be9a-4469-b242-5bbb4f71620b" source="#b656e9d9-f081-423a-ba43-52cf8ced3fce"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="e0fbb36a-3922-493d-b760-17b2fdeefc1d" name="Rover Deploment Authorization"
+              target="#bb7d6ed5-c776-472c-a5eb-2ff54fddeed9" source="#28278c1c-dc23-4252-940f-7d9bf70802a7"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="41ad2612-99be-46c2-83ed-983fdc4f4b60" name="Ramp Deploment Command"
+              target="#fb6c93a6-e056-4a6c-81ef-2bb1bad631e7" source="#366b993a-a430-468c-90b9-b8a3744acb51"/>
         </ownedSystemFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.ctx:CapabilityPkg"
@@ -547,15 +682,14 @@
                 kind="ASYNCHRONOUS_CALL" sendingEnd="#ee7ecd44-d95f-4eca-b325-8570eb56c8d6"
                 receivingEnd="#defc1c09-cd49-4a2f-8b4d-77bdb8c0d0c5"/>
             <ownedMessages xsi:type="org.polarsys.capella.core.data.interaction:SequenceMessage"
-                id="7fe73c95-c372-4067-b303-34577fa3fe38" name="Communication Established"
-                kind="ASYNCHRONOUS_CALL" sendingEnd="#8532528a-3182-4c0d-8f13-448e8e42bc90"
-                receivingEnd="#da85b17e-fe96-4045-93a0-c03eb882145e"/>
+                id="7fe73c95-c372-4067-b303-34577fa3fe38" name="" kind="ASYNCHRONOUS_CALL"
+                sendingEnd="#8532528a-3182-4c0d-8f13-448e8e42bc90" receivingEnd="#da85b17e-fe96-4045-93a0-c03eb882145e"/>
             <ownedMessages xsi:type="org.polarsys.capella.core.data.interaction:SequenceMessage"
                 id="b9e7590e-07d9-4a29-b3f6-5888e7722513" name="Rover Deployment Status"
                 kind="ASYNCHRONOUS_CALL" sendingEnd="#724914c5-efa3-4a0f-9931-03b83463c481"
                 receivingEnd="#c091e882-a8c1-4de0-8fb4-d043058abf59"/>
             <ownedMessages xsi:type="org.polarsys.capella.core.data.interaction:SequenceMessage"
-                id="62d09eda-7d01-496f-ba64-10665bdfea19" name="Post-Deploment Rover Health Check"
+                id="62d09eda-7d01-496f-ba64-10665bdfea19" name="Post-Deploment Health Check Status"
                 kind="ASYNCHRONOUS_CALL" sendingEnd="#46c36721-3829-46a7-9d04-28c6c751a6b2"
                 receivingEnd="#6e4e874a-ec12-4971-bdae-5c6e35e6f7a7"/>
             <ownedInteractionFragments xsi:type="org.polarsys.capella.core.data.interaction:InteractionState"
@@ -955,9 +1089,9 @@
             <ownedEvents xsi:type="org.polarsys.capella.core.data.interaction:ExecutionEvent"
                 id="6b6957cd-6cda-4f22-a3bc-0f8b30a6dde7"/>
             <ownedEvents xsi:type="org.polarsys.capella.core.data.interaction:EventSentOperation"
-                id="cae78b73-4739-4f33-90fa-23913eb11ef0" operation="#87138525-3bee-489d-a8d4-4a2723e33b0e"/>
+                id="cae78b73-4739-4f33-90fa-23913eb11ef0"/>
             <ownedEvents xsi:type="org.polarsys.capella.core.data.interaction:EventReceiptOperation"
-                id="2830db8f-8f20-4be6-8e6a-0a4ac550542d" operation="#87138525-3bee-489d-a8d4-4a2723e33b0e"/>
+                id="2830db8f-8f20-4be6-8e6a-0a4ac550542d"/>
             <ownedEvents xsi:type="org.polarsys.capella.core.data.interaction:ExecutionEvent"
                 id="2c57f5c8-0df2-4aee-a66b-76794b5c2ad9"/>
             <ownedEvents xsi:type="org.polarsys.capella.core.data.interaction:EventSentOperation"
@@ -1053,6 +1187,18 @@
                 id="2acfa6a5-7a19-4995-a14e-38ac40882e90" value="1"/>
           </ownedElements>
         </ownedExchangeItems>
+        <ownedExchangeItems xsi:type="org.polarsys.capella.core.data.information:ExchangeItem"
+            id="cb167ad9-8919-460e-8969-12e17e093b87" name="FunctionExecutionStatus"
+            exchangeMechanism="FLOW">
+          <ownedElements xsi:type="org.polarsys.capella.core.data.information:ExchangeItemElement"
+              id="faf20338-1740-4904-8633-fcc9220da29b" name="status" abstractType="#2016ea72-7f1d-424f-9c69-f20e2137104a"
+              direction="UNSET" composite="true">
+            <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="c206597c-897e-4de1-97b3-7a0de13df25e" value="1"/>
+            <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="5c3b6b52-5d13-4587-98bd-012861082815" value="1"/>
+          </ownedElements>
+        </ownedExchangeItems>
         <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
             id="27c0db6f-83c8-4658-ba9f-0f5a1e2f0c1c" name="Predefined Types">
           <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:BooleanType"
@@ -1145,6 +1291,16 @@
                 value="0"/>
           </ownedDataTypes>
         </ownedDataPkgs>
+        <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
+            id="2016ea72-7f1d-424f-9c69-f20e2137104a" name="ExecutionStatus">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+              id="b15f8eb2-7bf1-4b99-bebe-b55f393cf853" name="success" abstractType="#b252f99b-5e65-424f-9b3d-86260259d37a">
+            <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="6f01c2de-8258-4658-ab05-d00a094a3363" value="1"/>
+            <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="7f51c314-2901-4995-a964-95e5bf335b9a" value="1"/>
+          </ownedFeatures>
+        </ownedClasses>
         <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:Enumeration"
             id="b81448d1-af1d-4247-b7de-585ce48e2f99" name="ReadinessState">
           <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
@@ -1205,6 +1361,33 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="5a336b8a-4689-44bd-944b-708f2f81d5a6" targetElement="#0352d6cc-8921-4440-a55c-751537c0df1b"
               sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="ec1a626f-4fc2-451b-b701-ec3500ce3a42" targetElement="#a4c66bbe-6549-4cd9-8a99-bbd70657dc2c"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="0c46d700-b2b5-4d7f-b89a-bf25804ba416" targetElement="#8011956a-a04f-4f79-ba40-354442396b86"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="e332e863-5832-4584-be96-efd5c4f51c47" targetElement="#4c5e45fc-1e66-40d6-8c77-ba6f6d8d6850"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="0d214e56-9e0c-494b-9a3d-47fd991966ef" targetElement="#8430c4d6-a669-412c-8405-41ce6a8c3922"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="c731385d-1e27-455b-8ce4-534475235b07" targetElement="#a131c763-c447-48f9-8b4d-8c2817378000"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="e416402c-fef9-4219-931d-42967b775116" targetElement="#9ebdfe55-87c2-471f-872f-aee7eadf0221"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="8a5110a5-1658-46ee-8b82-5163e165cdcf" targetElement="#bf0cf181-6f0e-4bd1-9a3d-705c4205ff90"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="ff22ee52-d236-43ff-b5ac-5355235d7240" targetElement="#82f77071-c302-404d-a6db-dff9857f639a"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="5c6a2ac0-396f-4684-82a0-6ab25354df4b" targetElement="#7325680b-2997-43b8-a0cf-168e55d46899"
+              sourceElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"/>
           <ownedStateMachines xsi:type="org.polarsys.capella.core.data.capellacommon:StateMachine"
               id="862f25cc-1e88-4484-bbcd-998b80cbd182" name="System State Machine">
             <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
@@ -1222,6 +1405,12 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="35798fa7-0a1c-43ae-b113-4c34574720a4" targetElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"
               sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="ddbcafa2-4473-48df-86f2-bdc0a44a52ac" targetElement="#39b7d418-1eca-4021-a2f4-f8d1c46d2ba1"
+              sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="a9d3eddb-2059-49a1-a0d5-f2896c493a82" targetElement="#ffc97e0c-2023-4c80-8293-edaa5e64413f"
+              sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="2e5ee77f-f191-4643-a4f7-8f14249bbeee" targetElement="#81e934b1-5374-40af-9151-4dacd2e59963"
               sourceElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"/>
@@ -1229,7 +1418,19 @@
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
             id="9b520ecf-86f6-49cf-ae08-66c2a043961c" name="Ground Station" actor="true">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="e28631b1-5e4b-4dc3-b80f-c5828f1c9343" targetElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"
+              id="3630f47c-63bc-4861-9bc1-21eddc354f33" targetElement="#1fb5175e-70e5-49f2-af59-3e0858dd9dc0"
+              sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="2d69077d-2a88-4962-a3de-9300a858b1de" targetElement="#909e5a91-6bbc-4470-8486-a763b1df3da7"
+              sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="826060e3-6a01-4922-af41-a94e7dee58c1" targetElement="#e89b7193-f6cb-4edf-bbfc-93a76382e922"
+              sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="d5709b17-baaa-43a6-9747-8676d598a80b" targetElement="#b62a401b-b3ad-474a-afe5-521036816f84"
+              sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="fc97cf8e-f74d-4f44-afcd-5da0b80797ff" targetElement="#1e3c06ce-7ef8-4fea-8c0b-d1c2ac6c6e15"
               sourceElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="1aec722b-ea7b-4684-90cc-65417ce932fc" targetElement="#68241c71-05c0-4564-b79c-1efe49b45060"
@@ -1296,30 +1497,88 @@
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="f37a785d-bd57-4255-833d-08f4fe442a3e" name="Establish Communication">
-            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="9ac7a040-1059-42c8-bb0d-20e39d7174b1" name="inRover Health Status">
-              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="c2fe22ed-35cb-41bc-9821-abee9a797452" targetElement="#a0a8fd27-1da7-40ed-81ae-56d4a029c2cc"
-                  sourceElement="#9ac7a040-1059-42c8-bb0d-20e39d7174b1"/>
-            </inputs>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="b06952bd-849a-44ca-92f9-fa0fdc4f602a" name="outCommunication Established">
-              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="390e1946-3e0a-4237-acce-aa225d445e1e" targetElement="#6f98e65c-b952-4515-9198-faef2f14704c"
-                  sourceElement="#b06952bd-849a-44ca-92f9-fa0fdc4f602a"/>
-            </outputs>
+                id="b06952bd-849a-44ca-92f9-fa0fdc4f602a" name="outCommunication Established"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="f122ce18-8be1-43db-ac26-0295d200a725" name="Provide Communication Link">
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="a782c4b1-b328-4362-b6a2-05d47f82971a" name="FOP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="e3c08267-b906-4f2c-89fc-76ede7d7117d" targetElement="#5c59f0b1-37dc-41a0-b4be-5f64a86771c5"
+                    sourceElement="#a782c4b1-b328-4362-b6a2-05d47f82971a"/>
+              </outputs>
+              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                  id="397156b1-0167-4dec-a210-9a035434a087" targetElement="#a4c66bbe-6549-4cd9-8a99-bbd70657dc2c"
+                  sourceElement="#f122ce18-8be1-43db-ac26-0295d200a725"/>
+            </ownedFunctions>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="0c3ec357-bcbc-4a1c-8a30-bf4c30857559" name="Acquire Lander Link">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="b84efeea-8b06-4417-a195-f53af324ab16" name="FIP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="e626c5a6-dfd1-4dff-893b-7c593fdddc2e" targetElement="#4f0f59db-a6b9-4049-8197-13852bb19fe2"
+                    sourceElement="#b84efeea-8b06-4417-a195-f53af324ab16"/>
+              </inputs>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="a8401352-99ed-4d83-bd1a-b12b042eaab2" name="FOP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="7acc4c08-090e-454c-b833-2824e0d38823" targetElement="#b24da3c2-0370-41b5-8b2c-1e752cd70b8a"
+                    sourceElement="#a8401352-99ed-4d83-bd1a-b12b042eaab2"/>
+              </outputs>
+              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                  id="1ac6fdab-aa87-4bac-a4c1-eee3bf35164a" targetElement="#1fb5175e-70e5-49f2-af59-3e0858dd9dc0"
+                  sourceElement="#0c3ec357-bcbc-4a1c-8a30-bf4c30857559"/>
+            </ownedFunctions>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="5856f7da-9056-477f-b7e3-1281bd78adf0" name="Verify Communication Link">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="53abb159-2186-4586-b24f-ff810b4f49ad" name="FIP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="0995e970-fe82-4df9-b02d-098c3fadd2ff" targetElement="#e9f81e15-afd8-4c2a-984e-474201664472"
+                    sourceElement="#53abb159-2186-4586-b24f-ff810b4f49ad"/>
+              </inputs>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="6c8200b9-49c6-429e-b197-30198e838f01" name="FOP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="3d7497bc-ca92-44b2-9332-e61578e5e7fe" targetElement="#33891916-1e81-4014-acd8-105ad969b74a"
+                    sourceElement="#6c8200b9-49c6-429e-b197-30198e838f01"/>
+              </outputs>
+              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                  id="ad248643-01e9-49c2-8dc9-774c1f7cdbf6" targetElement="#8011956a-a04f-4f79-ba40-354442396b86"
+                  sourceElement="#5856f7da-9056-477f-b7e3-1281bd78adf0"/>
+            </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="0bebbbc5-a13a-471e-ad1a-424f0763bf56" targetElement="#8fef18b1-af06-451a-8b20-a6ea56de7645"
                 sourceElement="#f37a785d-bd57-4255-833d-08f4fe442a3e"/>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="346b99b1-348c-45f0-83de-99f8bed1a07d" name="Link Request" target="#b84efeea-8b06-4417-a195-f53af324ab16"
+                source="#a782c4b1-b328-4362-b6a2-05d47f82971a">
+              <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                  id="2d960cb9-1009-45bf-899b-4aecd96e7334" targetElement="#7b16db30-0511-472a-90ab-074dac5553f3"
+                  sourceElement="#346b99b1-348c-45f0-83de-99f8bed1a07d"/>
+            </ownedFunctionalExchanges>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="063def6b-3fc2-4bf1-9081-61ec68ed49f9" name="Link Acquisition Status"
+                target="#53abb159-2186-4586-b24f-ff810b4f49ad" source="#a8401352-99ed-4d83-bd1a-b12b042eaab2">
+              <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                  id="d233259b-55e8-4d58-be67-2d517d24dda5" targetElement="#dbea2930-e13d-4f66-a89c-ffa77de73283"
+                  sourceElement="#063def6b-3fc2-4bf1-9081-61ec68ed49f9"/>
+            </ownedFunctionalExchanges>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="adec5f8a-9961-4d09-8b3f-90d7f9cd0c43" name="Supervise Rover Operations">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="548b5941-ea83-4799-bdf5-c690bc622496" name="inPost-Deploment Rover Health Check">
+                id="868943bc-263b-43af-88ac-b36ee30016e9" name="FIP 2">
               <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="ef75b644-3f88-4b8b-8a59-1843047a8808" targetElement="#8de19b29-2bd2-4c96-bb50-58b50af37959"
-                  sourceElement="#548b5941-ea83-4799-bdf5-c690bc622496"/>
+                  id="ef9c5b65-d526-443a-803b-1be264a28aea" targetElement="#1eeafd90-ba9b-4a7c-b6fd-9e21be6a45ca"
+                  sourceElement="#868943bc-263b-43af-88ac-b36ee30016e9"/>
             </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="0b404edf-a558-46e9-ad6a-25ca22d7e357" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="60130143-5287-4a55-a2c4-fdf4f489b557" targetElement="#3ee84110-a58b-4ee6-91d3-01c6f9ab2ba2"
+                  sourceElement="#0b404edf-a558-46e9-ad6a-25ca22d7e357"/>
+            </outputs>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="551685a3-5a72-4eb4-b932-be733ae0b796" targetElement="#360d1735-4555-4727-983d-071395ccbde5"
                 sourceElement="#adec5f8a-9961-4d09-8b3f-90d7f9cd0c43"/>
@@ -1569,20 +1828,54 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="590106e0-2997-4ff7-9cca-f50b27d139cd" name="Deploy Rover">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="6b78c964-05c2-4d0b-8c34-9a85dc46f430" name="inCommunication Established">
-              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="f3597c85-022e-435e-80ba-f595c93888fc" targetElement="#d82ffdc3-1b21-45c5-9a86-8352a2f0ff08"
-                  sourceElement="#6b78c964-05c2-4d0b-8c34-9a85dc46f430"/>
-            </inputs>
-            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="f546e44b-5d38-4b30-a491-685c7c37c9fd" name="FOP 1">
-              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="4a88e180-b461-49d0-bc5e-0c60fcfc5410" targetElement="#3ca35185-31ef-4595-86d4-608eb2d8ea21"
-                  sourceElement="#f546e44b-5d38-4b30-a491-685c7c37c9fd"/>
-            </outputs>
+                id="6b78c964-05c2-4d0b-8c34-9a85dc46f430" name="inCommunication Established"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="77806e4c-cdcc-4b8b-a0aa-839a9d134c4f" name="Deploy Rover Ramp">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="7e5c3e19-5d8e-4bcc-a6f7-65eab2a67942" name="FIP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="014c6fcf-0a04-4872-be9e-83e8f3782372" targetElement="#fb6c93a6-e056-4a6c-81ef-2bb1bad631e7"
+                    sourceElement="#7e5c3e19-5d8e-4bcc-a6f7-65eab2a67942"/>
+              </inputs>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="9432430b-2205-43b3-b6f9-09cae0ba6dac" name="FOP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="df46d845-4c05-49cf-978b-6d530d8ea395" targetElement="#441d65d0-f27f-4383-b42d-726fc6b1eadf"
+                    sourceElement="#9432430b-2205-43b3-b6f9-09cae0ba6dac"/>
+              </outputs>
+              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                  id="df3d0ec9-fbab-4239-86b6-17e9aa818cbb" targetElement="#8430c4d6-a669-412c-8405-41ce6a8c3922"
+                  sourceElement="#77806e4c-cdcc-4b8b-a0aa-839a9d134c4f"/>
+            </ownedFunctions>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="7889bc49-d321-4861-b636-8c055dd97cbb" name="Release Rover Restraints">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="5b449d5c-ff24-4e1c-bec3-968007bee307" name="FIP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="94c668cb-4f68-4e8a-b2d6-566477f1f9ea" targetElement="#aabc86c3-3b7d-485f-96fe-5cdb2eb67701"
+                    sourceElement="#5b449d5c-ff24-4e1c-bec3-968007bee307"/>
+              </inputs>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="f546e44b-5d38-4b30-a491-685c7c37c9fd" name="FOP 1">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="4a88e180-b461-49d0-bc5e-0c60fcfc5410" targetElement="#3ca35185-31ef-4595-86d4-608eb2d8ea21"
+                    sourceElement="#f546e44b-5d38-4b30-a491-685c7c37c9fd"/>
+              </outputs>
+              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                  id="e85378d4-fd9e-458a-9d71-8be2d0d6b40a" targetElement="#a131c763-c447-48f9-8b4d-8c2817378000"
+                  sourceElement="#7889bc49-d321-4861-b636-8c055dd97cbb"/>
+            </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="653c834d-62c9-49a8-b514-29560340c3ba" targetElement="#8b54f059-0f05-4aaf-8f53-d7195cf5a384"
                 sourceElement="#590106e0-2997-4ff7-9cca-f50b27d139cd"/>
+            <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+                id="02294c62-9e8c-4182-8a8b-26eb9a3d5670" name="Ramp Deployment Status"
+                target="#5b449d5c-ff24-4e1c-bec3-968007bee307" source="#9432430b-2205-43b3-b6f9-09cae0ba6dac"
+                exchangedItems="#cb167ad9-8919-460e-8969-12e17e093b87">
+              <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                  id="f30a052a-dcfa-4dc6-b097-420bc3531bab" targetElement="#e1be1a74-9436-4a2a-ad99-4e2b58148a4d"
+                  sourceElement="#02294c62-9e8c-4182-8a8b-26eb9a3d5670"/>
+            </ownedFunctionalExchanges>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="8ce03c98-7acf-40d2-8a1d-922f9f83c9e1" name="Perform Post-Deploment Health Check">
@@ -1598,27 +1891,217 @@
                   id="605f51af-6077-461d-baf0-6c6ae23b6757" targetElement="#33daaad0-b621-48bf-ae3e-122df4ace82d"
                   sourceElement="#13d25595-5f5e-4778-af7c-0a6f4837a5fe"/>
             </outputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="8702c28f-3bbe-4e90-b4b4-11f7d23b40ea" name="FOP 2">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="2f9e101a-4d43-494a-8fcf-379c7a29790f" targetElement="#43044765-41a9-4705-bf18-51a131aa24fd"
+                  sourceElement="#8702c28f-3bbe-4e90-b4b4-11f7d23b40ea"/>
+            </outputs>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="059af437-c16e-4977-b709-c97dd6cace78" targetElement="#b4a09ec0-ca21-4045-bb0b-e4f5e8ad814a"
                 sourceElement="#8ce03c98-7acf-40d2-8a1d-922f9f83c9e1"/>
           </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="be8d62f1-cfeb-4e2c-a755-89c93c06148d" name="Transmit Lander Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="05ff7ca3-bf72-430f-8b7c-547ce82d0112" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="3c72703d-a36b-43bd-8272-b9c1f1574948" targetElement="#be5e5f35-266a-4c58-910e-ad99d8e9163e"
+                  sourceElement="#05ff7ca3-bf72-430f-8b7c-547ce82d0112"/>
+            </inputs>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="5d883476-5ce5-4daa-90b4-6b649201f4f0" name="FIP 2">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="e40076af-d46b-4cd7-93b3-0283ddeafffc" targetElement="#372e3381-8799-4e33-a0ca-f3a6ef043ab3"
+                  sourceElement="#5d883476-5ce5-4daa-90b4-6b649201f4f0"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="bf8fae95-95fc-4458-8b89-92d94aa892bf" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="0f65f8ab-f0d6-4404-94a9-60e44e9cdbbc" targetElement="#2e0ca8ca-ca39-4fd4-bbdd-c9b99e1f2407"
+                  sourceElement="#bf8fae95-95fc-4458-8b89-92d94aa892bf"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="4ce4d690-40ed-451b-9e72-cd10e2c66e9a" targetElement="#4c5e45fc-1e66-40d6-8c77-ba6f6d8d6850"
+                sourceElement="#be8d62f1-cfeb-4e2c-a755-89c93c06148d"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="b3b96229-fbea-4379-a1de-8032acb34e3c" name="Receive Lander Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="b4d1a5e5-71e1-4128-bfe6-728d41962f57" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="b0aee96d-5acc-484b-a8f8-fd65cdf13031" targetElement="#5f8ed159-ab02-4283-968a-62ea03e4c561"
+                  sourceElement="#b4d1a5e5-71e1-4128-bfe6-728d41962f57"/>
+            </inputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="68af893c-4c03-4f8a-a817-33e8dcab3c22" targetElement="#909e5a91-6bbc-4470-8486-a763b1df3da7"
+                sourceElement="#b3b96229-fbea-4379-a1de-8032acb34e3c"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="f65a7f80-7923-4dd0-901f-338611cceacf" name="Receive Rover Health Status">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="c6513e8a-348f-4755-80d1-f79ac062ad7a" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="e044491f-3968-4072-b411-cb3e3ed71ee1" targetElement="#d3641857-4fde-4b4c-9914-c875f3e29af0"
+                  sourceElement="#c6513e8a-348f-4755-80d1-f79ac062ad7a"/>
+            </outputs>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="92767030-2702-4ed8-ae82-e793c03f44a4" name="Receive Mated Rover Health Status">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="9ac7a040-1059-42c8-bb0d-20e39d7174b1" name="inRover Health Status">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="c2fe22ed-35cb-41bc-9821-abee9a797452" targetElement="#a0a8fd27-1da7-40ed-81ae-56d4a029c2cc"
+                    sourceElement="#9ac7a040-1059-42c8-bb0d-20e39d7174b1"/>
+              </inputs>
+            </ownedFunctions>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+                id="874f04a3-d8aa-48bc-8251-26f7bb115082" name="Receive Proximity Rover Health Status">
+              <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                  id="548b5941-ea83-4799-bdf5-c690bc622496" name="inPost-Deploment Rover Health Check">
+                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                    id="ef75b644-3f88-4b8b-8a59-1843047a8808" targetElement="#8de19b29-2bd2-4c96-bb50-58b50af37959"
+                    sourceElement="#548b5941-ea83-4799-bdf5-c690bc622496"/>
+              </inputs>
+            </ownedFunctions>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="5ce27f36-54b9-480e-a302-341f3faf6a90" targetElement="#7325680b-2997-43b8-a0cf-168e55d46899"
+                sourceElement="#f65a7f80-7923-4dd0-901f-338611cceacf"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="d0d4f1ed-4df8-4405-b390-0def5f7fb450" name="Authorize Rover Deploment">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="6f005877-ae6a-41ad-9c50-fd6c6ef92712" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="926c29b4-4433-4e09-801d-acb2c9ece4d1" targetElement="#28278c1c-dc23-4252-940f-7d9bf70802a7"
+                  sourceElement="#6f005877-ae6a-41ad-9c50-fd6c6ef92712"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="bdde6b77-7b27-4f9c-83f5-253a88d8dede" targetElement="#1e3c06ce-7ef8-4fea-8c0b-d1c2ac6c6e15"
+                sourceElement="#d0d4f1ed-4df8-4405-b390-0def5f7fb450"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="f7a6676f-f6d6-44f4-b439-a1aab8f73e2e" name="Receive Deploment Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="26749800-bf1a-41ff-8631-c3852b1d4a44" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="af293e18-8e6d-49dc-a49d-9aa01703e0b3" targetElement="#bb7d6ed5-c776-472c-a5eb-2ff54fddeed9"
+                  sourceElement="#26749800-bf1a-41ff-8631-c3852b1d4a44"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="25200469-6661-4852-935d-1d68f2a7f37c" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="747f9191-c05d-4afe-8c98-23458139578c" targetElement="#366b993a-a430-468c-90b9-b8a3744acb51"
+                  sourceElement="#25200469-6661-4852-935d-1d68f2a7f37c"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="2ffd0210-c9e6-418f-9c7f-5093c12075b4" targetElement="#82f77071-c302-404d-a6db-dff9857f639a"
+                sourceElement="#f7a6676f-f6d6-44f4-b439-a1aab8f73e2e"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="35b422b2-62c9-4ebe-b4cd-ee70444c361a" name="Provide Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="d198b0dc-f6b6-4fe4-a469-3cefb987a214" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="57a5530b-6669-4c74-a3fc-48cc7bbf9a6a" targetElement="#75a859f4-3030-4556-875d-d9f358b62bac"
+                  sourceElement="#d198b0dc-f6b6-4fe4-a469-3cefb987a214"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="793a9a7a-8dff-460b-a82d-384d33bd9425" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="dec7eb4a-ff58-4ab7-8dd2-405f016a6678" targetElement="#5671d1bb-c674-4348-af74-8e5b86c28181"
+                  sourceElement="#793a9a7a-8dff-460b-a82d-384d33bd9425"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="04842aa7-71c5-4a4c-8bad-5dcb747bdf57" targetElement="#39b7d418-1eca-4021-a2f4-f8d1c46d2ba1"
+                sourceElement="#35b422b2-62c9-4ebe-b4cd-ee70444c361a"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="e9927bb4-67f0-448c-9483-00b35e4d0bc3" name="Relay Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="2269ea77-0796-4211-8f56-07624ef18b3c" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="485adc55-ac6a-4645-a363-f78381be6756" targetElement="#417636ce-1112-4084-b238-ec577325d603"
+                  sourceElement="#2269ea77-0796-4211-8f56-07624ef18b3c"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="627ff467-45b6-48f1-844e-dc37db832a8d" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="7dde6a39-b6f9-4aa1-9862-274102b56d0a" targetElement="#8a52146f-3532-4365-9824-c58825c4702d"
+                  sourceElement="#627ff467-45b6-48f1-844e-dc37db832a8d"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="2073fbfe-9e5e-4c60-9ddc-4ddf14f0a359" targetElement="#9ebdfe55-87c2-471f-872f-aee7eadf0221"
+                sourceElement="#e9927bb4-67f0-448c-9483-00b35e4d0bc3"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="0a822f35-8a56-4684-8d3c-fba50edd6118" name="Receive Rover Telemetry">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="77cdeed8-03a3-4957-bd67-451fef115cc9" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="a420650c-c9e6-42a4-acc1-79a31ed3da8d" targetElement="#d2abab63-ad34-46e5-81b0-86b8a458cda2"
+                  sourceElement="#77cdeed8-03a3-4957-bd67-451fef115cc9"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="868a0882-c024-4264-9c07-1b322bbb1464" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="74fa07a8-1018-4840-bdcb-b1a3c3672134" targetElement="#26886101-805e-411a-89cd-0c6931fbf1d9"
+                  sourceElement="#868a0882-c024-4264-9c07-1b322bbb1464"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="2be1bef0-762f-4344-9a34-85cb86b53d2f" targetElement="#b62a401b-b3ad-474a-afe5-521036816f84"
+                sourceElement="#0a822f35-8a56-4684-8d3c-fba50edd6118"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="3b693d77-0a7a-4dbb-80ba-157b09a84f04" name="Transmit Rover Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="95f5e295-56f2-4037-84ec-ac03e505bc4c" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="448dad2e-0dcc-414f-882e-c097c387d093" targetElement="#5a6d98fb-7080-48cf-af92-f9f045305b2a"
+                  sourceElement="#95f5e295-56f2-4037-84ec-ac03e505bc4c"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="51baf037-87c5-4b3f-b0e1-2d28f0887b2f" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="c6d6eb82-3496-4cbe-8820-a04f40b7c786" targetElement="#e0b5068a-4e83-4528-a9e2-9133df27b096"
+                  sourceElement="#51baf037-87c5-4b3f-b0e1-2d28f0887b2f"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="945fa7d2-341c-4374-a736-bc81c97c9f11" targetElement="#e89b7193-f6cb-4edf-bbfc-93a76382e922"
+                sourceElement="#3b693d77-0a7a-4dbb-80ba-157b09a84f04"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="6894d120-43c8-4789-b2c0-6118ce767c46" name="Relay Rover Command">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="53460eeb-c267-4d2a-afb3-3a0c7a0e0fa1" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="04fbe44a-7ab1-4494-adb8-409a37225546" targetElement="#24dd6759-1b85-489d-a088-3a65ef032b6e"
+                  sourceElement="#53460eeb-c267-4d2a-afb3-3a0c7a0e0fa1"/>
+            </inputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="9ea8c9ee-ab6e-461b-9fba-35add849504e" name="FOP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="a4c9e788-c47f-4f1e-86ed-85ea23e41434" targetElement="#b656e9d9-f081-423a-ba43-52cf8ced3fce"
+                  sourceElement="#9ea8c9ee-ab6e-461b-9fba-35add849504e"/>
+            </outputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="2ca04381-0ff7-4731-9a0a-131e3f82d3a7" targetElement="#bf0cf181-6f0e-4bd1-9a3d-705c4205ff90"
+                sourceElement="#6894d120-43c8-4789-b2c0-6118ce767c46"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="f523d200-a7c2-4250-bb2f-65d67e9ab66b" name="Receive Rover Commands">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="b7ccfec2-cd83-4c03-9ce1-5ddb3815abd6" name="FIP 1">
+              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
+                  id="fcfb33f1-1645-4789-b820-2e3b341065f4" targetElement="#e5ad02fe-be9a-4469-b242-5bbb4f71620b"
+                  sourceElement="#b7ccfec2-cd83-4c03-9ce1-5ddb3815abd6"/>
+            </inputs>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="7b56f443-6a9f-4299-b22f-2224a42d1bfa" targetElement="#ffc97e0c-2023-4c80-8293-edaa5e64413f"
+                sourceElement="#f523d200-a7c2-4250-bb2f-65d67e9ab66b"/>
+          </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="e6c9aa65-e363-46fd-aba7-ffcf0b18754a" targetElement="#e615b0c6-a024-4465-8cda-8f740fa439b0"
               sourceElement="#e0566675-8e9e-407e-8999-0e9c7e4767a7"/>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="9462e638-665a-4d3b-80ff-3cc02e9b9afd" name="Initialization Status"
-              target="#bd2c3da7-e7fa-4af4-8e43-d1f9e2ca1a85" source="#7ae72f96-c8aa-4470-9cba-66477f970be2">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="cfc7da0f-2939-4066-8c8d-52136c87afff" targetElement="#0c16f712-25c2-450d-a8be-65137e2955cc"
-                sourceElement="#9462e638-665a-4d3b-80ff-3cc02e9b9afd"/>
-          </ownedFunctionalExchanges>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="c4edb94a-3a2e-4a91-bad9-cb81b9dc8d05" name="Pre-Deploment Rover Health Status"
-              target="#9ac7a040-1059-42c8-bb0d-20e39d7174b1" source="#e73d4152-8ea5-4e57-aaa8-3bc32596677e">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="2bac91c9-15ca-4048-8e85-a22325c81670" targetElement="#94f192b6-cb79-4d39-9d60-0485cd9098ff"
-                sourceElement="#c4edb94a-3a2e-4a91-bad9-cb81b9dc8d05"/>
-          </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="b1e12a16-634a-440e-8eb2-f651601e03a4" name="Navigation Preparation Status"
               target="#ffa88174-926c-47c8-9619-51c2131f5b89" source="#a9832884-3694-4526-a764-29759c7eee0a">
@@ -1649,25 +2132,7 @@
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="0e792eb7-8761-4e24-9ca8-c7a191273947" name="Communication Established"
-              target="#6b78c964-05c2-4d0b-8c34-9a85dc46f430" source="#b06952bd-849a-44ca-92f9-fa0fdc4f602a">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="e856f6ee-750f-4d1c-b55e-07cb7c7920bc" targetElement="#87138525-3bee-489d-a8d4-4a2723e33b0e"
-                sourceElement="#0e792eb7-8761-4e24-9ca8-c7a191273947"/>
-          </ownedFunctionalExchanges>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="126fd89a-1897-4446-b717-1a73066ac003" name="Post-Deploment Rover Health Check"
-              target="#548b5941-ea83-4799-bdf5-c690bc622496" source="#13d25595-5f5e-4778-af7c-0a6f4837a5fe">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="05cd115c-cb16-47c1-b197-e06b75a0acb6" targetElement="#ece3ab82-4418-465b-a006-d5560314bd09"
-                sourceElement="#126fd89a-1897-4446-b717-1a73066ac003"/>
-          </ownedFunctionalExchanges>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="55ea102f-fc8e-458e-ace2-eb6969716291" name="Rover Deployment Status"
-              target="#dac4016f-a7d1-4fe1-9cb9-9faa238ed525" source="#f546e44b-5d38-4b30-a491-685c7c37c9fd">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="40af6d71-0586-4a38-bd31-ea79fad04808" targetElement="#a8657789-0a39-4b95-8afe-58a7f9fe7258"
-                sourceElement="#55ea102f-fc8e-458e-ace2-eb6969716291"/>
-          </ownedFunctionalExchanges>
+              target="#6b78c964-05c2-4d0b-8c34-9a85dc46f430" source="#b06952bd-849a-44ca-92f9-fa0fdc4f602a"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="3fc9161b-2eac-42ed-be77-8cbb20a9489f" name="Propulsion Preparation Status"
               target="#fe07e4c7-4c3f-4c9c-98df-fd6b647ae2b4" source="#a9832884-3694-4526-a764-29759c7eee0a">
@@ -1681,6 +2146,118 @@
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="8fee4786-09db-421b-925b-1b9a3249f375" targetElement="#ecb8d591-263d-4c5c-ab35-c9b30fec3e92"
                 sourceElement="#cbeaca7c-9e29-4c18-9fde-ecc4d739a283"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="add2203e-cca7-4007-98c5-2b6610938a0e" name="Communication Established"
+              target="#05ff7ca3-bf72-430f-8b7c-547ce82d0112" source="#6c8200b9-49c6-429e-b197-30198e838f01">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="bf14977a-aba5-489d-8960-f0df45feafdc" targetElement="#63782d00-f933-4ebb-b9f4-543a66690aaa"
+                sourceElement="#add2203e-cca7-4007-98c5-2b6610938a0e"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="40694c27-b8ef-4204-8ed9-b07e3f7b00bc" name="Health Telemetry" target="#5d883476-5ce5-4daa-90b4-6b649201f4f0"
+              source="#c6513e8a-348f-4755-80d1-f79ac062ad7a">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="c21312c2-4d77-4264-b399-8b6a84a31e1d" targetElement="#e2707a38-8997-449d-8c7d-ff43c800995a"
+                sourceElement="#40694c27-b8ef-4204-8ed9-b07e3f7b00bc"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="9462e638-665a-4d3b-80ff-3cc02e9b9afd" name="Initialization Status"
+              target="#bd2c3da7-e7fa-4af4-8e43-d1f9e2ca1a85" source="#7ae72f96-c8aa-4470-9cba-66477f970be2">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="cfc7da0f-2939-4066-8c8d-52136c87afff" targetElement="#0c16f712-25c2-450d-a8be-65137e2955cc"
+                sourceElement="#9462e638-665a-4d3b-80ff-3cc02e9b9afd"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="c4edb94a-3a2e-4a91-bad9-cb81b9dc8d05" name="Pre-Deploment Rover Health Status"
+              target="#9ac7a040-1059-42c8-bb0d-20e39d7174b1" source="#e73d4152-8ea5-4e57-aaa8-3bc32596677e">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="2bac91c9-15ca-4048-8e85-a22325c81670" targetElement="#94f192b6-cb79-4d39-9d60-0485cd9098ff"
+                sourceElement="#c4edb94a-3a2e-4a91-bad9-cb81b9dc8d05"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="7293d6c9-c3ce-4614-ad18-20016cf2e7e8" name="Lander Telemetry" target="#b4d1a5e5-71e1-4128-bfe6-728d41962f57"
+              source="#bf8fae95-95fc-4458-8b89-92d94aa892bf">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="654e9a87-bfd3-4740-a18f-091dce95ec62" targetElement="#b74b80c8-ef9d-4b39-911b-df553f817882"
+                sourceElement="#7293d6c9-c3ce-4614-ad18-20016cf2e7e8"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="126fd89a-1897-4446-b717-1a73066ac003" name="Post-Deploment Health Check Status"
+              target="#548b5941-ea83-4799-bdf5-c690bc622496" source="#13d25595-5f5e-4778-af7c-0a6f4837a5fe">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="05cd115c-cb16-47c1-b197-e06b75a0acb6" targetElement="#ece3ab82-4418-465b-a006-d5560314bd09"
+                sourceElement="#126fd89a-1897-4446-b717-1a73066ac003"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="55ea102f-fc8e-458e-ace2-eb6969716291" name="Rover Deployment Status"
+              target="#dac4016f-a7d1-4fe1-9cb9-9faa238ed525" source="#f546e44b-5d38-4b30-a491-685c7c37c9fd">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="40af6d71-0586-4a38-bd31-ea79fad04808" targetElement="#a8657789-0a39-4b95-8afe-58a7f9fe7258"
+                sourceElement="#55ea102f-fc8e-458e-ace2-eb6969716291"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="eaeecd38-0d7a-4028-bab4-57d0c6667229" name="Rover Operational Readiness"
+              target="#d198b0dc-f6b6-4fe4-a469-3cefb987a214" source="#8702c28f-3bbe-4e90-b4b4-11f7d23b40ea">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="b5002ff9-fa9a-4193-a5a8-482e31e561d0" targetElement="#71efdd1c-931e-4b2a-a653-bccffc8d3fad"
+                sourceElement="#eaeecd38-0d7a-4028-bab4-57d0c6667229"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="4b772c6d-7ab9-4a94-b9ac-2e8e5a70fb97" name="Rover Telemetry" target="#2269ea77-0796-4211-8f56-07624ef18b3c"
+              source="#793a9a7a-8dff-460b-a82d-384d33bd9425">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="18bba1cd-0711-4d10-b7da-8ca789b69494" targetElement="#c11d3416-9e58-430b-9b22-eb7f66ff73b4"
+                sourceElement="#4b772c6d-7ab9-4a94-b9ac-2e8e5a70fb97"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="adc9b581-9acb-44a2-bea5-f047b136b8aa" name="Relay Rover Telemetry"
+              target="#77cdeed8-03a3-4957-bd67-451fef115cc9" source="#627ff467-45b6-48f1-844e-dc37db832a8d">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="ca2d963e-2e27-4601-b503-0cfc3cce9051" targetElement="#15251fbd-833b-43eb-ae64-d01b2da583b1"
+                sourceElement="#adc9b581-9acb-44a2-bea5-f047b136b8aa"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="9fc901a4-77a2-4f36-9600-3a1418b716cf" name="Rover Telemtry" target="#868943bc-263b-43af-88ac-b36ee30016e9"
+              source="#868a0882-c024-4264-9c07-1b322bbb1464">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="a0ce872a-49aa-4189-9314-2c27b8a66293" targetElement="#3b15b6d0-64c8-479a-a7e7-119d71528a02"
+                sourceElement="#9fc901a4-77a2-4f36-9600-3a1418b716cf"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="19be46ab-3822-46ae-bba2-83aa8fdb1d9f" name="Rover Command" target="#95f5e295-56f2-4037-84ec-ac03e505bc4c"
+              source="#0b404edf-a558-46e9-ad6a-25ca22d7e357">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="084fc7d0-7026-407e-80ab-5d0e8660e910" targetElement="#d1eb27ff-5539-4bed-8bcc-0629433ec7a1"
+                sourceElement="#19be46ab-3822-46ae-bba2-83aa8fdb1d9f"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="d882da1b-77f8-43c3-a93c-bd3d7b5f7c9d" name="Rover Command" target="#53460eeb-c267-4d2a-afb3-3a0c7a0e0fa1"
+              source="#51baf037-87c5-4b3f-b0e1-2d28f0887b2f">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="fdbb4e08-6b53-4420-97f8-55200f457ae9" targetElement="#3271c1a6-8e56-4391-9e0c-6730fbcbbea1"
+                sourceElement="#d882da1b-77f8-43c3-a93c-bd3d7b5f7c9d"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="4c9b4b61-acb0-451c-9d9b-0df9c707e84d" name="Relayed Rover Command"
+              target="#b7ccfec2-cd83-4c03-9ce1-5ddb3815abd6" source="#9ea8c9ee-ab6e-461b-9fba-35add849504e">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="c9e4074d-e326-48ea-9334-c1cef418f436" targetElement="#99b50028-486c-48c6-bbfd-41597bc5d8c5"
+                sourceElement="#4c9b4b61-acb0-451c-9d9b-0df9c707e84d"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="57ca67e1-4f18-4aaf-b399-d3512818eea2" name="Rover Deploment Authorization"
+              target="#26749800-bf1a-41ff-8631-c3852b1d4a44" source="#6f005877-ae6a-41ad-9c50-fd6c6ef92712">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="22606bf1-14fe-4340-9305-269e86341e01" targetElement="#e0fbb36a-3922-493d-b760-17b2fdeefc1d"
+                sourceElement="#57ca67e1-4f18-4aaf-b399-d3512818eea2"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="2b3a3c07-2bf2-4317-a6a6-20d9d5bfb0a3" name="Ramp Deploment Command"
+              target="#7e5c3e19-5d8e-4bcc-a6f7-65eab2a67942" source="#25200469-6661-4852-935d-1d68f2a7f37c">
+            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
+                id="0118585f-e6b9-41fc-831c-6c019996c274" targetElement="#41ad2612-99be-46c2-83ed-983fdc4f4b60"
+                sourceElement="#2b3a3c07-2bf2-4317-a6a6-20d9d5bfb0a3"/>
           </ownedFunctionalExchanges>
         </ownedLogicalFunctions>
       </ownedFunctionPkg>
@@ -1759,7 +2336,7 @@
             id="2d18039a-55da-4578-858f-3fa33dc2ec76" targetElement="#e9d49ab4-5972-4183-80a5-75a08b4b3ecf"
             sourceElement="#eb7df2d6-408b-43f4-8f35-8a6b1cbc512f"/>
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="3c788679-a513-4769-96eb-ab5ad2ecdc47"
-            name="Lunar Lander" abstractType="#c75b0470-62ca-4015-a6d3-8fe2d83e00bc"/>
+            name="Logical System" abstractType="#c75b0470-62ca-4015-a6d3-8fe2d83e00bc"/>
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="507e6e0e-fd5e-4a25-b227-5cce5e88467d"
             name="Rover" abstractType="#4ac0fadc-09b3-4d20-9c1b-05ffdfbdd33f"/>
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="a4d0710a-753c-45a9-9445-2d3e7dc323ae"
@@ -1767,7 +2344,7 @@
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="eb7df2d6-408b-43f4-8f35-8a6b1cbc512f"
             name="Rover Operator" abstractType="#52078459-72fb-48b3-99ea-f9eeecfa642f"/>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
-            id="c75b0470-62ca-4015-a6d3-8fe2d83e00bc" name="Lunar Lander">
+            id="c75b0470-62ca-4015-a6d3-8fe2d83e00bc" name="Logical System">
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="569370d8-d0d4-4c24-8a03-a1c50708e653"
               name="EPS" abstractType="#d9dbc999-4d4f-474a-a244-336ccb2ef876"/>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="68a5ef4e-e85b-4df0-9a4c-84cb88beeb00"
@@ -1778,6 +2355,8 @@
               name="Propulsion" abstractType="#5f5056c8-9264-4e71-9028-8e376fa01146"/>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="7a00c814-caad-4099-a202-9129d3f4351f"
               name="OBDH" abstractType="#0ec5908d-6906-429a-8e7d-bf54657c11c8"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="23f912b3-c66b-42c0-b686-f69f21f7a836"
+              name="Rover Accommodation" abstractType="#799b640a-ab5b-4be7-8fc7-c366e1f73dde"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="dbae22f6-9062-4a8d-aa32-feca18d3c250" targetElement="#1db61a0f-ef6c-4bb7-a97a-3a56c7a1d82d"
               sourceElement="#c75b0470-62ca-4015-a6d3-8fe2d83e00bc"/>
@@ -1796,15 +2375,21 @@
             <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="55be5f59-bcf5-420a-9239-88ee72230ab3"
                 name="Mated Rover Interface" abstractType="#ba73ea8f-8a9e-46e5-956d-62da1d65ca62"/>
             <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
-                id="84196e78-c5b2-4bcc-a1f8-8e5a1e76d76f" name="Long-Range Communication"/>
+                id="84196e78-c5b2-4bcc-a1f8-8e5a1e76d76f" name="Long-Range Communication">
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="bc0fed6d-f9cd-41a6-b3fe-d0e99a1aa308" targetElement="#f122ce18-8be1-43db-ac26-0295d200a725"
+                  sourceElement="#84196e78-c5b2-4bcc-a1f8-8e5a1e76d76f"/>
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="48565ded-3fae-4854-af4b-0c6ba0f19014" targetElement="#5856f7da-9056-477f-b7e3-1281bd78adf0"
+                  sourceElement="#84196e78-c5b2-4bcc-a1f8-8e5a1e76d76f"/>
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="0f1343a5-3922-447b-a42a-d1c315642365" targetElement="#be8d62f1-cfeb-4e2c-a755-89c93c06148d"
+                  sourceElement="#84196e78-c5b2-4bcc-a1f8-8e5a1e76d76f"/>
+            </ownedLogicalComponents>
             <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
                 id="8a41fab1-bd3c-4c5a-acba-ea74fcb5b683" name="Proximity Communication"/>
             <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
-                id="ba73ea8f-8a9e-46e5-956d-62da1d65ca62" name="Mated Rover Interface">
-              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-                  id="98dd8103-92f6-43d4-83af-936b677cd37e" targetElement="#3ed7b578-4e7e-481c-be7c-aebb31e7a248"
-                  sourceElement="#ba73ea8f-8a9e-46e5-956d-62da1d65ca62"/>
-            </ownedLogicalComponents>
+                id="ba73ea8f-8a9e-46e5-956d-62da1d65ca62" name="Mated Rover Interface"/>
           </ownedLogicalComponents>
           <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
               id="7f45de71-9bd3-47f7-8702-d0fa877a721b" name="GNC" summary="Guidance, Navigation, &amp; Control">
@@ -1823,6 +2408,18 @@
             <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
                 id="6b80ab16-4585-4200-9fc9-170479597fa4" targetElement="#61fac3a6-ceca-4177-b3f3-8ccc48c6afae"
                 sourceElement="#0ec5908d-6906-429a-8e7d-bf54657c11c8"/>
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="afd9aaa6-4cc4-4804-bc4c-01ed8dd2de9b" targetElement="#c30f13f1-0f3e-46a6-b077-29a17ee73f77"
+                sourceElement="#0ec5908d-6906-429a-8e7d-bf54657c11c8"/>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="799b640a-ab5b-4be7-8fc7-c366e1f73dde" name="Rover Accommodation">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="b5237da3-6ec9-4cc4-ab4a-09f183a2bd51" targetElement="#77806e4c-cdcc-4b8b-a0aa-839a9d134c4f"
+                sourceElement="#799b640a-ab5b-4be7-8fc7-c366e1f73dde"/>
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="f565a64f-4b0c-4080-b6ce-dc757a0aaa72" targetElement="#7889bc49-d321-4861-b636-8c055dd97cbb"
+                sourceElement="#799b640a-ab5b-4be7-8fc7-c366e1f73dde"/>
           </ownedLogicalComponents>
         </ownedLogicalComponents>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
@@ -1833,11 +2430,23 @@
           <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
               id="e2473dd2-bc6b-4964-a8aa-a4910fc5c4f6" targetElement="#35798fa7-0a1c-43ae-b113-4c34574720a4"
               sourceElement="#96f2da59-f219-4ed3-8df2-e469e51859f2"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="069d35b5-9485-43b0-8188-5cf99c296b87" targetElement="#ddbcafa2-4473-48df-86f2-bdc0a44a52ac"
+              sourceElement="#1dab6a8d-d39d-4630-a5fc-65714bbb6d57"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="0c3cd6a7-4665-4301-8f15-38e77e8684bb" targetElement="#a9d3eddb-2059-49a1-a0d5-f2896c493a82"
+              sourceElement="#d807940f-6419-4a77-b9f0-c4111dbc7492"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="624bfcd1-6290-44bd-9d99-0050f6008939" targetElement="#f9ec9a6c-8778-48b9-81d2-965d4a5abe8d"
               sourceElement="#4ac0fadc-09b3-4d20-9c1b-05ffdfbdd33f"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="96f2da59-f219-4ed3-8df2-e469e51859f2" targetElement="#8ce03c98-7acf-40d2-8a1d-922f9f83c9e1"
+              sourceElement="#4ac0fadc-09b3-4d20-9c1b-05ffdfbdd33f"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="1dab6a8d-d39d-4630-a5fc-65714bbb6d57" targetElement="#35b422b2-62c9-4ebe-b4cd-ee70444c361a"
+              sourceElement="#4ac0fadc-09b3-4d20-9c1b-05ffdfbdd33f"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="d807940f-6419-4a77-b9f0-c4111dbc7492" targetElement="#f523d200-a7c2-4250-bb2f-65d67e9ab66b"
               sourceElement="#4ac0fadc-09b3-4d20-9c1b-05ffdfbdd33f"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="1afafc8e-3f5e-4277-8661-ef99cd5596ef" targetElement="#51083b51-0c87-4c7e-82d0-911ea8a0eb15"
@@ -1846,10 +2455,34 @@
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4" name="Ground Station" actor="true">
           <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
-              id="15d289f5-1f4a-43ca-a225-79ccd16a9006" targetElement="#e28631b1-5e4b-4dc3-b80f-c5828f1c9343"
-              sourceElement="#e564e82c-a35b-4484-8f0e-5715bd32f6cc"/>
+              id="43c4a888-e75b-4c0f-99de-5970aa3ec973" targetElement="#3630f47c-63bc-4861-9bc1-21eddc354f33"
+              sourceElement="#a3023050-7c1e-4e1e-8438-3b94ca7e50b2"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="b28e1081-43ac-4c74-aab1-d757c4c1bce5" targetElement="#2d69077d-2a88-4962-a3de-9300a858b1de"
+              sourceElement="#96294173-b098-4027-83ce-2b5c5842e4f3"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="4798a99b-65b7-4ea5-93a2-8b4ccbc09f5f" targetElement="#826060e3-6a01-4922-af41-a94e7dee58c1"
+              sourceElement="#133cbb9e-4f8d-4a28-aa31-ad3fbe10c446"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="6b03c3c5-1dcd-4a99-8cf2-b3084393788a" targetElement="#d5709b17-baaa-43a6-9747-8676d598a80b"
+              sourceElement="#e307512b-06f7-4978-a3b1-2bb91311eca0"/>
+          <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
+              id="4ee398d7-f38e-4225-b986-80b1a28b70dd" targetElement="#fc97cf8e-f74d-4f44-afcd-5da0b80797ff"
+              sourceElement="#42504097-1b79-4125-a875-a96d4742a712"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="e564e82c-a35b-4484-8f0e-5715bd32f6cc" targetElement="#f37a785d-bd57-4255-833d-08f4fe442a3e"
+              id="a3023050-7c1e-4e1e-8438-3b94ca7e50b2" targetElement="#0c3ec357-bcbc-4a1c-8a30-bf4c30857559"
+              sourceElement="#fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="96294173-b098-4027-83ce-2b5c5842e4f3" targetElement="#b3b96229-fbea-4379-a1de-8032acb34e3c"
+              sourceElement="#fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="133cbb9e-4f8d-4a28-aa31-ad3fbe10c446" targetElement="#3b693d77-0a7a-4dbb-80ba-157b09a84f04"
+              sourceElement="#fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="e307512b-06f7-4978-a3b1-2bb91311eca0" targetElement="#0a822f35-8a56-4684-8d3c-fba50edd6118"
+              sourceElement="#fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="42504097-1b79-4125-a875-a96d4742a712" targetElement="#d0d4f1ed-4df8-4405-b390-0def5f7fb450"
               sourceElement="#fa12f86a-c7c8-43f4-9f9a-c4fc1083eeb4"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="0d166c2d-bcfc-4403-badc-08d9f8305059" targetElement="#9b520ecf-86f6-49cf-ae08-66c2a043961c"
