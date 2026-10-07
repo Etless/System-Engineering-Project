@@ -8409,7 +8409,7 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="0ec21f83-6d6f-4f60-849c-ab891cbdee22"
                   name="X-Band Transceiver" abstractType="#39c7a04a-f4f5-4bc0-86f1-52e2bb6cec71"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="96eb323f-5c1e-4cd6-9435-bfee52db1d5a"
-                  name="X-Band Antenna" abstractType="#100d45ee-dd49-4691-ac7c-640d5f27da89"/>
+                  name="X-Band Antennas" abstractType="#100d45ee-dd49-4691-ac7c-640d5f27da89"/>
               <ownedPhysicalLinks xsi:type="org.polarsys.capella.core.data.cs:PhysicalLink"
                   id="e77d10ed-6e4d-45b4-b453-3cb583f9d8b4" name="Coax Cable" linkEnds="#6bd11785-d539-4057-b649-ab299e088ac7 #e137c34b-0a37-4bdb-b0a2-309de214d2be"/>
               <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
@@ -8421,7 +8421,7 @@
                     id="c5f2eb3b-4045-482c-b0be-b441107d1649" name="PP 2"/>
               </ownedPhysicalComponents>
               <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
-                  id="100d45ee-dd49-4691-ac7c-640d5f27da89" name="X-Band Antenna"
+                  id="100d45ee-dd49-4691-ac7c-640d5f27da89" name="X-Band Antennas"
                   nature="NODE">
                 <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:PhysicalPort"
                     id="e137c34b-0a37-4bdb-b0a2-309de214d2be" name="PP 1"/>
@@ -8435,7 +8435,7 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="adb388af-dea0-49c9-9b10-30bbb1bc7ccc"
                   name="S-Band Transceiver" abstractType="#e6c82cc4-3214-4b4a-ac45-fa3e7d5a17e0"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="3c378fb6-775a-4d1c-a638-58d62265055b"
-                  name="S-Band Antenna" abstractType="#50719bdf-3be1-40df-b1cf-afdbf3c21531"/>
+                  name="S-Band Antennas" abstractType="#50719bdf-3be1-40df-b1cf-afdbf3c21531"/>
               <ownedPhysicalLinks xsi:type="org.polarsys.capella.core.data.cs:PhysicalLink"
                   id="bd004400-71d6-4737-9893-56539848ed58" name="Coax Cable" linkEnds="#819204b2-e196-4255-8a3e-dc9c7144fb42 #39cd3d43-f8c9-40fb-99d2-b4cbe80ebe27"/>
               <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
@@ -8447,7 +8447,7 @@
                     id="e6a525df-adae-491b-a91f-2dd1de5bde4c" name="PP 2"/>
               </ownedPhysicalComponents>
               <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
-                  id="50719bdf-3be1-40df-b1cf-afdbf3c21531" name="S-Band Antenna"
+                  id="50719bdf-3be1-40df-b1cf-afdbf3c21531" name="S-Band Antennas"
                   nature="NODE">
                 <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:PhysicalPort"
                     id="39cd3d43-f8c9-40fb-99d2-b4cbe80ebe27" name="PP 1"/>
